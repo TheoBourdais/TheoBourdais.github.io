@@ -20,13 +20,13 @@ Education
 
 Work experience
 ======
-* 2021/2022: Junior Data engineer, Doc.ai (a ShareCare company)
+* Junior Data engineer, Doc.ai-ShareCare, (2021/2022)
   * Worked on several research projects in Computer Vision for Healthcare
   * Projects
     * Study of AI-based symptoms tracking for Myasthenia Gravis (collaboration with UCB)
     * Automatic medication label reader 
 
-* Summer 2020: Research Intern, INRIA
+* Research Intern, INRIA (Summer 2020)
   * Research internship on robust optimisation. 
   
 Skills
@@ -42,24 +42,24 @@ Skills
   * English (Fluent)
   * Spanish (proficient)
 
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+# Publications
+# ======
+#  <ul>{% for post in site.publications %}
+#    {% include archive-single-cv.html %}
+#  {% endfor %}</ul>
   
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
+# Talks
+# ======
+#  <ul>{% for post in site.talks %}
+#    {% include archive-single-talk-cv.html %}
+#  {% endfor %}</ul>
   
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
+# Teaching
+# ======
+#  <ul>{% for post in site.teaching %}
+#    {% include archive-single-cv.html %}
+#  {% endfor %}</ul>
   
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+# Service and leadership
+# ======
+# * Currently signed in to 43 different slack teams
