@@ -9,32 +9,38 @@ redirect_from:
 
 {% include base_path %}
 
+[Download CV](/files/cv.pdf)
+
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* Preparatory class, Lycée Louis-le-Grand, Paris (2015/2017)
+* Master of Science, Ecole polytechnique, Paris (2017/2021)
+* Master of Mathematics, University of Cambridge (2020/2021)
+* PhD, California Institute of Technology (2022/present)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* 2021/2022: Junior Data engineer, Doc.ai (a ShareCare company)
+  * Worked on several research projects in Computer Vision for Healthcare
+  * Projects
+    * Study of AI-based symptoms tracking for Myasthenia Gravis (collaboration with UCB)
+    * Automatic medication label reader 
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Summer 2020: Research Intern, INRIA
+  * Research internship on robust optimisation. 
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Coding
+  * Python
+  * LateX
+  * Java
+  * Golang
+  * C++ (bases)
+* Languages
+  * French (native)
+  * English (Fluent)
+  * Spanish (proficient)
 
 Publications
 ======
