@@ -1,12 +1,13 @@
 ---
 permalink: /
-title: "A little introduction"
-excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
+
+Welcome
+======
 
 I am a PhD student at CalTech, in the [Computing and Mathematical Sciences Deprtment](https://www.cms.caltech.edu/), under the supervision of  [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm). I am also honored to be a [Kortschak Scholar](https://www.cms.caltech.edu/research/kortschak-scholars). Prior to joining Caltech, I received a Master's degree from Ecole Polytechnique, as well as a Master's from the University of Cambridge. 
 
