@@ -11,14 +11,14 @@ redirect_from:
 
 To view my full CV as a pdf, click  [here](/files/cv.pdf)
 
-Education
+## Education
 ======
 * Preparatory class, Lycée Louis-le-Grand, Paris (2015/2017)
 * Master of Science, Ecole polytechnique, Paris (2017/2021)
 * Master of Mathematics, University of Cambridge (2020/2021)
 * PhD, California Institute of Technology (2022/present)
 
-Work experience
+## Work experience
 ======
 * Junior Data engineer, Doc.ai-ShareCare, (2021/2022)
   * Worked on several research projects in Computer Vision for Healthcare
@@ -29,7 +29,7 @@ Work experience
 * Research Intern, INRIA (Summer 2020)
   * Research internship on robust optimisation. 
   
-Skills
+## Skills
 ======
 * Coding
   * Python
