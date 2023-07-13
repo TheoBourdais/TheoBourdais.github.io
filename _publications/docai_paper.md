@@ -2,8 +2,7 @@
 title: "Development and Assessment of an Artificial Intelligence-Based Tool for Ptosis Measurement in Adult Myasthenia Gravis Patients Using Selfie Video Clips Recorded on Smartphones"
 collection: publications
 permalink: /publication/docai_paper
-excerpt: 'My first paper ! 
-This paper describes the work we did at Doc.ai for ShareCare on Myasthenia gravis (MG) with UCB. We devellopped a Deep Learning model based on ResNet50 to predict a key symptom of MG via selfie. This would allow clinical trials to accept more patients as part of a study in order to scale it, as well as follow almost in real time the evolution of a patient's symptoms using an app on their phone. '
+excerpt: 'My first paper ! This paper describes the work we did at Doc.ai for ShareCare on Myasthenia gravis (MG) with UCB. We devellopped a Deep Learning model based on ResNet50 to predict a key symptom of MG via selfie. This would allow clinical trials to accept more patients as part of a study in order to scale it, as well as follow almost in real time the evolution of a patient's symptoms using an app on their phone.'
 date: 2023-05-16
 venue: 'Digital Biomarkers'
 paperurl: 'https://doi.org/10.1159/000531224'
