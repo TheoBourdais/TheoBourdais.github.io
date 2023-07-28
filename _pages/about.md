@@ -18,5 +18,5 @@ I am interested in Gaussian Processes and their interaction with other domains o
 
 ## News
 
-* *08/20/2023* I will be present at the International Congress on Industrial and Applied Mathematics in Tokyo, Japan.
+* *08/20/2023* I will attend the International Congress on Industrial and Applied Mathematics in Tokyo, Japan.
 * *05/16/2023* [Our paper](/publication/docai_paper) from Doc.ai has been published in Digital Biomarkers
