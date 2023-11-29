@@ -17,6 +17,6 @@ I am a PhD student at Caltech, in the [Computing and Mathematical Sciences Depar
 I am interested in Gaussian Processes and their interaction with other domains of Machine Learning, like Deep Learning, as well as other application in computing sciences like solving partial differential equations.  
 
 ## News
-
+* *11/28/2023* Our Paper [Computational Hypergraph Discovery](/publication/CHD) was poster on Arxiv! See the companion blog post [here](/posts/2023/11/CHD/).
 * *08/20/2023* I will attend the International Congress on Industrial and Applied Mathematics in Tokyo, Japan.
 * *05/16/2023* [Our paper](/publication/docai_paper) from Doc.ai has been published in Digital Biomarkers
