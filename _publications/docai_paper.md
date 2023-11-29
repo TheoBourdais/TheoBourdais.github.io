@@ -11,7 +11,7 @@ paperurl: 'https://karger.com/dib/article/doi/10.1159/000531224/854396/Developme
 
 ## Context
 
-My first paper ! This paper describes the work we did at Doc.ai for ShareCare on Myasthenia gravis (MG) with UCB. We devellopped a Deep Learning model based on ResNet50 to predict a key symptom of MG via selfie. This would allow clinical trials to accept more patients as part of a study in order to scale it, as well as follow almost in real time the evolution of a patients symptoms using an app on their phone.
+My first paper ! This paper describes the work we did at Doc.ai for ShareCare on Myasthenia gravis (MG) with UCB. We developed a Deep Learning model based on ResNet50 to predict a key symptom of MG via selfie. This would allow clinical trials to accept more patients as part of a study in order to scale it, as well as follow almost in real time the evolution of a patients symptoms using an app on their phone.
 
 [Download paper here](/files/000531224.pdf)
 
