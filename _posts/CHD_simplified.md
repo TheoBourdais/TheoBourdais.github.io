@@ -2,7 +2,7 @@
 title: "Unveiling Data's Hidden Networks: A Practical Guide to Computational Hypergraph Discovery"
 date: 2023-11-28
 collection: posts
-permalink: /posts/2023/11/CHD_intro
+permalink: /posts/2023/11/CHD_intro/
 tags:
   - Paper blog post
   - Paper code
