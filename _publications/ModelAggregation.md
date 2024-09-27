@@ -14,9 +14,10 @@ paperurl: 'https://arxiv.org/abs/2409.17267'
 We present a general framework to combine existing models in a robust manner. Our method is flexible, places few assumptions on the models aggregated, and performs well in our experiments.
 
 [See the full article here](https://arxiv.org/abs/2409.17267)
+
 [Download preprint here](/files/2409.17267v1.pdf)
 
-![Model Aggregation](/images/GP_aggregate.jpg)
+![Model Aggregation](/images/GP_aggregate.jpg){ width=80% }
 
 ## Abstract
 
