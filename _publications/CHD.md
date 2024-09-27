@@ -6,7 +6,7 @@ excerpt: 'This paper introduces Computational Hypergraph Discovery (CHD), a nove
 date: 2023-11-28
 venue: 'PNAS'
 paperurl: 'https://www.pnas.org/doi/10.1073/pnas.2403449121'
-#citation: 'Bourdais, T., Batlle, P., Yang, X., Baptista, R., Rouquette, N., & Owhadi, H. (2024). Codiscovering graphical structure and functional relationships within data: A Gaussian Process framework for connecting the dots. Proceedings of the National Academy of Sciences, 121(32), e2403449121. https://doi.org/10.1073/pnas.2403449121'
+citation: 'Bourdais, T., Batlle, P., Yang, X., Baptista, R., Rouquette, N., & Owhadi, H. (2024). Codiscovering graphical structure and functional relationships within data: A Gaussian Process framework for connecting the dots. Proceedings of the National Academy of Sciences, 121(32), e2403449121. https://doi.org/10.1073/pnas.2403449121'
 ---
 
 ## Context

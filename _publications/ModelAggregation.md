@@ -6,7 +6,7 @@ excerpt: 'We present a general framework to combine existing models in a robust 
 date: 2024-09-27
 venue: 'Arxiv'
 paperurl: 'https://arxiv.org/abs/2409.17267'
-#citation: 'Bourdais, T., & Owhadi, H. (2024). Model aggregation: minimizing empirical variance outperforms minimizing empirical error. arXiv [Cs.LG]. Retrieved from http://arxiv.org/abs/2409.17267'
+citation: 'Bourdais, T., & Owhadi, H. (2024). Model aggregation: minimizing empirical variance outperforms minimizing empirical error. arXiv [Cs.LG]. Retrieved from http://arxiv.org/abs/2409.17267'
 ---
 
 ## Context
