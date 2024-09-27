@@ -17,7 +17,7 @@ We present a general framework to combine existing models in a robust manner. Ou
 
 [Download preprint here](/files/2409.17267v1.pdf)
 
-![Model Aggregation](/images/GP_aggregate.jpg){ width=80% }
+![Model Aggregation](/images/aggreg_image.png)
 
 ## Abstract
 
