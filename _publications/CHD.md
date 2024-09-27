@@ -14,9 +14,10 @@ paperurl: 'https://www.pnas.org/doi/10.1073/pnas.2403449121'
 This paper introduces Computational Hypergraph Discovery (CHD), a novel method for uncovering unknown functional relationships between variables within datasets, And represent them using a hypergraph. See the companion blog post [here](/posts/2023/11/CHD/).
 
 [See the full article here](https://www.pnas.org/doi/10.1073/pnas.2403449121)
+
 [Download preprint here](/files/2311.17007.pdf)
 
-
+![Computational Hypergraph Discovery](/images/CHD/FPUT_subgraph.png)
 
 ## Abstract
 
