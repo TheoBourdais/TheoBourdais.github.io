@@ -1,7 +1,7 @@
 ---
 title: "Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization"
 collection: publications
-permalink: /publication/RMT_DL_paper
+permalink: /publication/RMT_DL_paper/
 excerpt: 'We use Random Matrix Theory and regularization to prune deep neural networks, achieving state-of-the-art results on Imagenet with VITs. We also show theorems justifying our approach.'
 date: 2025-03-02
 venue: 'Arxiv'
