@@ -8,7 +8,8 @@ venue: 'Arxiv'
 paperurl: 'https://arxiv.org/abs/2503.01922'
 ---
 
-<img src="/images/Pruning_DNNs_RMT_Example_1_Top_1.png" alt="Results of our RMT-based pruning approach on Vision Transformer (ViT) base-16 model trained on ImageNet. The graph demonstrates how our method maintains high accuracy while significantly reducing model parameters." width="30%" />
+<img src="/images/Pruning_DNNs_RMT_Example_1_Top_1.png" alt="Results of our RMT-based pruning approach on Vision Transformer (ViT) base-16 model trained on ImageNet. The graph demonstrates how our method maintains high accuracy while significantly reducing model parameters." width="50%" />
+
 *Performance of our RMT-based pruning method on ViT-Base-16 model trained on ImageNet. The plot shows the relationship between model sparsity and Top-1 accuracy, demonstrating our method's ability to maintain high performance even with substantial parameter reduction.*
 
 ## Abstract
