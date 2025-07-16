@@ -1,0 +1,246 @@
+baseURL: https://TheoBourdais.github.io/
+languageCode: en-us
+title: "Theo Bourdais"
+theme: "hugo-profile"
+
+params:
+  name: "Theo Bourdais"
+  title: "PhD Student @ Caltech"
+  description: "PhD Student in Applied and Computational Mathematics at Caltech"
+  author: "Theo Bourdais"
+  email: "tbourdai@caltech.edu"
+  location: "California Institute of Technology"
+  
+  # Social links
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/TheoBourdais"
+    - name: "googlescholar"
+      url: "https://scholar.google.com/citations?user=Vr_DMBoAAAAJ&hl=fr"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/theobourdais/"
+    - name: "email"
+      url: "mailto:tbourdai@caltech.edu"
+
+  # Navigation
+  navbar:
+    align: ms-auto
+    brandLogo: "/images/profile.png"
+    showBrandLogo: true
+    brandName: "Theo Bourdais"
+    disableSearch: false
+    searchPlaceholder: "Search"
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    menus:
+      disableAbout: false
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false
+      disableContact: false
+
+  # Hero section
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Theo Bourdais"
+    subtitle: "PhD Student in Applied and Computational Mathematics"
+    content: "I am a PhD student at Caltech working on machine learning, Gaussian processes, and computational mathematics. My research focuses on developing new methods for data analysis and understanding complex systems."
+    image: "/images/profile.png"
+    bottomImage:
+      enable: true
+    button:
+      enable: true
+      name: "Resume"
+      url: "/files/cv.pdf"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/TheoBourdais
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/theobourdais/
+        - icon: fas fa-envelope
+          url: mailto:tbourdai@caltech.edu
+
+  # About section
+  about:
+    enable: true
+    title: "About Me"
+    image: "/images/profile.png"
+    content: |-
+      I am a PhD student in Applied and Computational Mathematics at the California Institute of Technology (Caltech), working under the supervision of Prof. Houman Owhadi. My research interests lie at the intersection of machine learning, Gaussian processes, and computational mathematics.
+
+      My work focuses on developing new theoretical frameworks and practical algorithms for understanding complex systems and data. I am particularly interested in:
+      - Computational Hypergraph Discovery
+      - Model Aggregation techniques
+      - Gaussian Process methods
+      - Random Matrix Theory applications in machine learning
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "Python"
+        - "Machine Learning"
+        - "Gaussian Processes"
+        - "Scientific Computing"
+        - "Deep Learning"
+        - "Random Matrix Theory"
+
+  # Experience section
+  experience:
+    enable: true
+    title: "Experience"
+    items:
+      - job: "PhD Student"
+        company: "California Institute of Technology"
+        companyUrl: "https://www.caltech.edu"
+        date: "2021 - Present"
+        content: "PhD in Applied and Computational Mathematics under Prof. Houman Owhadi. Research on machine learning, Gaussian processes, and computational mathematics."
+      
+      - job: "Research Intern"
+        company: "Doc.ai (ShareCare)"
+        companyUrl: "https://www.sharecare.com"
+        date: "2020"
+        content: "Developed AI models for medical applications, specifically for Myasthenia Gravis symptom tracking using computer vision and smartphone data."
+
+  # Education section
+  education:
+    enable: true
+    title: "Education"
+    items:
+      - title: "PhD in Applied and Computational Mathematics"
+        school:
+          name: "California Institute of Technology"
+          url: "https://www.caltech.edu"
+        date: "2021 - Present"
+        content: |-
+          Advisor: Prof. Houman Owhadi
+          Research focus: Machine learning, Gaussian processes, computational mathematics
+      
+      - title: "Master's in Applied Mathematics"
+        school:
+          name: "École Polytechnique"
+          url: "https://www.polytechnique.edu"
+        date: "2019 - 2021"
+        content: "Specialized in applied mathematics and computational methods"
+
+  # Projects section
+  projects:
+    enable: true
+    title: "Projects"
+    items:
+      - title: "Computational Hypergraph Discovery"
+        content: "A novel method for uncovering unknown functional relationships between variables within datasets using Gaussian Process framework."
+        image: "/images/CHD/FPUT_subgraph.png"
+        featured:
+          name: "Paper"
+          link: "https://www.pnas.org/doi/10.1073/pnas.2403449121"
+        badges:
+          - "Gaussian Processes"
+          - "Machine Learning"
+          - "PNAS"
+        links:
+          - icon: fab fa-github
+            url: https://github.com/TheoBourdais/ComputationalHypergraphDiscovery
+          - icon: fas fa-external-link-alt
+            url: https://www.pnas.org/doi/10.1073/pnas.2403449121
+
+      - title: "Model Aggregation"
+        content: "A data-driven framework for combining predictions from diverse models to enhance overall accuracy."
+        image: "/images/aggreg_image.png"
+        featured:
+          name: "Paper"
+          link: "https://arxiv.org/abs/2409.17267"
+        badges:
+          - "Ensemble Methods"
+          - "Machine Learning"
+          - "ICLR 2025"
+        links:
+          - icon: fas fa-external-link-alt
+            url: https://arxiv.org/abs/2409.17267
+
+  # Achievements section
+  achievements:
+    enable: true
+    title: "Publications"
+    items:
+      - title: "Codiscovering graphical structure and functional relationships within data"
+        content: "Published in PNAS (2024). Introduces Computational Hypergraph Discovery framework."
+        url: "https://www.pnas.org/doi/10.1073/pnas.2403449121"
+        image: "/images/CHD/FPUT_subgraph.png"
+      
+      - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
+        content: "Accepted at ICLR 2025. Novel framework for model combination."
+        url: "https://arxiv.org/abs/2409.17267"
+        image: "/images/aggreg_image.png"
+
+  # Contact section
+  contact:
+    enable: true
+    title: "Get In Touch"
+    content: "Feel free to reach out if you'd like to discuss research, collaboration opportunities, or have any questions about my work."
+    email: "tbourdai@caltech.edu"
+    btnName: "Email me"
+
+  footer:
+    recentPosts:
+      path: "blogs"
+      count: 3
+      title: "Recent Posts"
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/TheoBourdais
+      linkedin: https://www.linkedin.com/in/theobourdais/
+
+# Markup settings
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    lineNos: true
+    style: github
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNumbersInTable: true
+    noClasses: true
+    tabWidth: 4
+
+# Menu configuration
+menu:
+  main:
+    - identifier: blogs
+      name: Blog
+      title: Blog posts
+      url: /posts
+      weight: 1
+    - identifier: gallery
+      name: Gallery
+      title: Blog posts
+      url: /gallery
+      weight: 2
+
+# Page settings
+pagination:
+  pagerSize: 3
+googleAnalytics: # Add your Google Analytics ID if you have one
+
+# Build settings
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Permalinks
+permalinks:
+  posts: /posts/:year/:month/:day/:title/
+  publications: /publications/:title/
+  talks: /talks/:title/
