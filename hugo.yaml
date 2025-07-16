@@ -28,8 +28,9 @@ params:
     brandLogo: "/images/profile.png"
     showBrandLogo: true
     brandName: "Theo Bourdais"
-    disableSearch: false
+    disableSearch: true
     searchPlaceholder: "Search"
+    enableSeparator: true
     stickyNavBar:
       enable: true
       showOnScrollUp: true
@@ -137,8 +138,8 @@ params:
         content: "A novel method for uncovering unknown functional relationships between variables within datasets using Gaussian Process framework."
         image: "/images/CHD/FPUT_subgraph.png"
         featured:
-          name: "Paper"
-          link: "https://www.pnas.org/doi/10.1073/pnas.2403449121"
+          name: "Learn More"
+          link: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
         badges:
           - "Gaussian Processes"
           - "Machine Learning"
@@ -153,8 +154,8 @@ params:
         content: "A data-driven framework for combining predictions from diverse models to enhance overall accuracy."
         image: "/images/aggreg_image.png"
         featured:
-          name: "Paper"
-          link: "https://arxiv.org/abs/2409.17267"
+          name: "Learn More"
+          link: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
         badges:
           - "Ensemble Methods"
           - "Machine Learning"
@@ -170,12 +171,12 @@ params:
     items:
       - title: "Codiscovering graphical structure and functional relationships within data"
         content: "Published in PNAS (2024). Introduces Computational Hypergraph Discovery framework."
-        url: "https://www.pnas.org/doi/10.1073/pnas.2403449121"
+        url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
         image: "/images/CHD/FPUT_subgraph.png"
       
       - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
         content: "Accepted at ICLR 2025. Novel framework for model combination."
-        url: "https://arxiv.org/abs/2409.17267"
+        url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
         image: "/images/aggreg_image.png"
 
   # Contact section
@@ -188,7 +189,7 @@ params:
 
   footer:
     recentPosts:
-      path: "blogs"
+      path: "posts"
       count: 3
       title: "Recent Posts"
       enable: true
@@ -218,16 +219,21 @@ markup:
 # Menu configuration
 menu:
   main:
-    - identifier: blogs
+    - identifier: publications
+      name: Publications
+      title: Publications
+      url: /publications
+      weight: 1
+    - identifier: talks
+      name: Talks
+      title: Talks
+      url: /talks
+      weight: 2
+    - identifier: posts
       name: Blog
       title: Blog posts
       url: /posts
-      weight: 1
-    - identifier: gallery
-      name: Gallery
-      title: Blog posts
-      url: /gallery
-      weight: 2
+      weight: 3
 
 # Page settings
 pagination:
