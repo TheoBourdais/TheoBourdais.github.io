@@ -89,6 +89,75 @@
 <script src="{{ .Site.Params.staticPath }}/js/contact.js"></script>
 {{ end }}
 
+<!-- KaTeX and Highlight.js initialization -->
+<script>
+// Initialize KaTeX
+document.addEventListener("DOMContentLoaded", function() {
+  if (typeof renderMathInElement !== 'undefined') {
+    renderMathInElement(document.body, {
+      delimiters: [
+        {left: "$$", right: "$$", display: true},
+        {left: "$", right: "$", display: false},
+        {left: "\\(", right: "\\)", display: false},
+        {left: "\\[", right: "\\]", display: true}
+      ]
+    });
+  }
+  
+  // Initialize highlight.js with proper configuration
+  if (typeof hljs !== 'undefined') {
+    // Configure hljs to not add line numbers
+    hljs.configure({
+      lineNumbers: false,
+      languages: ['python', 'javascript', 'html', 'css', 'bash']
+    });
+    hljs.highlightAll();
+    
+    // Clean up any existing line numbering that might have been added
+    document.querySelectorAll('pre code').forEach(function(block) {
+      // Remove any hljs line number elements
+      const lineNumbers = block.querySelectorAll('.hljs-ln-numbers, .hljs-ln-code, .hljs-ln-line');
+      lineNumbers.forEach(el => el.remove());
+      
+      // Remove line number data attributes
+      block.removeAttribute('data-line-number');
+      block.querySelectorAll('[data-line-number]').forEach(el => el.removeAttribute('data-line-number'));
+    });
+  }
+  
+  // Add copy functionality to code blocks
+  document.querySelectorAll('.highlight').forEach(function(highlight) {
+    // Create copy button element
+    const copyButton = document.createElement('button');
+    copyButton.className = 'copy-button';
+    copyButton.setAttribute('aria-label', 'Copy code');
+    
+    // Add button to highlight container
+    highlight.appendChild(copyButton);
+    
+    // Add click event only to the button
+    copyButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Find the code content (in the second table cell)
+      const codeCell = highlight.querySelector('table td:last-child code');
+      if (codeCell) {
+        const text = codeCell.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+          copyButton.classList.add('copied');
+          setTimeout(function() {
+            copyButton.classList.remove('copied');
+          }, 2000);
+        }).catch(function(err) {
+          console.error('Failed to copy text: ', err);
+        });
+      }
+    });
+  });
+});
+</script>
+
 {{ if (.Site.Params.customScripts | default false) }}
 {{ .Site.Params.customScripts | safeHTML }}
 {{ end }}

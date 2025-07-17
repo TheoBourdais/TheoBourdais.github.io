@@ -4,6 +4,7 @@ title: "Theo Bourdais"
 theme: "hugo-profile"
 
 params:
+  favicon: "/images/site-logo.png"
   name: "Theo Bourdais"
   title: "PhD Student @ Caltech"
   description: "PhD Student in Applied and Computational Mathematics at Caltech"
@@ -157,11 +158,14 @@ params:
         image: "/images/CHD/FPUT_subgraph.png"
         featured:
           name: "Explore Research"
-          link: "/publications/"
-        badges:
-          - "Computational Hypergraph Discovery"
-          - "Gaussian Processes"
-          - "Machine Learning"
+          link: "/research-areas/algorithm-discovery/"
+        badgeLinks:
+          - name: "Computational Hypergraph Discovery"
+            url: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
+          - name: "Gaussian Processes"
+            url: "https://en.wikipedia.org/wiki/Gaussian_process"
+          - name: "Machine Learning"
+            url: "https://en.wikipedia.org/wiki/Machine_learning"
         links:
           - icon: fas fa-file-alt
             url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
@@ -172,14 +176,17 @@ params:
 
       - title: "Digital Twins"
         content: "Creating robust digital representations of physical systems by combining multiple models and data sources. My research addresses the challenge of model uncertainty and develops frameworks for aggregating diverse computational models to create more accurate and reliable digital twins."
-        image: "/images/aggreg_image.png"
+        image: "/images/uav-elements.jpeg"
         featured:
           name: "Learn More"
-          link: "/publications/"
-        badges:
-          - "Model Aggregation"
-          - "Ensemble Methods"
-          - "Uncertainty Quantification"
+          link: "/research-areas/digital-twins/"
+        badgeLinks:
+          - name: "Model Aggregation"
+            url: "https://en.wikipedia.org/wiki/Ensemble_learning"
+          - name: "Ensemble Methods"
+            url: "https://en.wikipedia.org/wiki/Ensemble_learning"
+          - name: "Uncertainty Quantification"
+            url: "https://en.wikipedia.org/wiki/Uncertainty_quantification"
         links:
           - icon: fas fa-file-alt
             url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
@@ -196,7 +203,7 @@ params:
       - title: "Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization"
         content: "Posted on arXiv (2025). Novel RMT-based approach for pruning Vision Transformers with state-of-the-art results on ImageNet."
         url: "/publications/pruning-deep-neural-networks-via-a-combination-of-the-marchenko-pastur-distribution-and-regularization/"
-        image: "/images/Pruning_DNNs_RMT_Example_1_Top_1.png"
+        image: "/images/ViT_base_MP_fit.png"
       
       - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
         content: "Accepted at ICLR 2025. Novel framework for model combination."

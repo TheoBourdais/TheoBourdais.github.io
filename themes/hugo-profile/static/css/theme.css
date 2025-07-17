@@ -54,3 +54,76 @@ body *::selection {
     color: var(--text-color) !important;
     background-color: var(--primary-color) !important;
 }
+
+/* Custom styles for profile photo and news section */
+
+/* Make profile photo square with center cropping */
+.hero .image img,
+.navbar-brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+}
+
+/* Ensure consistent container sizing for profile photo */
+.hero .image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1rem; /* Changed from 50% to 1rem for square with rounded corners */
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Fix text opacity inconsistency in hero section */
+#hero p {
+    opacity: 0.9 !important;
+}
+
+/* News section styling to match site theme */
+#news {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#news h3 {
+    color: var(--text-secondary-color) !important;
+    margin-bottom: 2rem;
+}
+
+.news-timeline {
+    position: relative;
+}
+
+.news-item {
+    border-bottom: 1px solid var(--secondary-color) !important;
+    opacity: 0.9;
+}
+
+.news-item:last-child {
+    border-bottom: none !important;
+}
+
+.news-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.news-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-content a:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+}

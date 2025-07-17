@@ -1,0 +1,79 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.summary | default .Summary }}">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">{{ .Title }}</h1>
+          </div>
+
+          <!-- Main Content -->
+          <article class="page-content p-2">
+            {{ .Content | emojify }}
+          </article>
+        </div>
+      </div>
+      
+      <!-- Right Sidebar -->
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <!-- Table of Contents -->
+          <aside class="toc">
+            <h5>Table of Contents</h5>
+            <div class="toc-content">
+              {{ .TableOfContents }}
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Back to top button -->
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  // To set height of sticky sidebar dynamically
+  let postStickySideBar = document.getElementById("stickySideBar");
+  let postStickyNavBar = {{ if .Site.Params.navbar.stickyNavBar.enable }}true{{ else }}false{{ end }};
+  if(postStickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    postStickySideBar.style.top = headerHeight + "px";
+  } else {
+    postStickySideBar.style.top = "50px";
+  }
+</script>
+
+{{ end }}

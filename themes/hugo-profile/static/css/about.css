@@ -112,21 +112,65 @@
 /* code */
 
 #single .page-content pre {
-    border-radius: 0.7em !important;
-    margin: 5px;
-    margin-bottom: 2em;
-    padding: 2em;
-    background-color: var(--secondary-color) !important;
-    color: var(--text-secondary-color) !important;
-    max-height: 450px;
+    background: var(--secondary-color) !important;
+    border: 1px solid var(--text-secondary-color);
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    position: relative;
+    font-size: 0.9rem;
+    max-height: none;
 }
 
-#single .page-content pre>code {
-    color: var(--text-secondary-color) !important;
+#single .page-content pre::before {
+    content: 'Copy';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: var(--text-secondary-color);
+    color: var(--secondary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+}
+
+#single .page-content pre:hover::before {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#single .page-content pre.copied::before {
+    content: 'Copied!';
+    background: var(--primary-color);
+}
+
+#single .page-content pre > code {
+    background: transparent !important;
+    color: var(--text-color) !important;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    display: block;
+    white-space: pre;
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
 
 #single .page-content code {
+    background: var(--secondary-color) !important;
     color: var(--primary-color) !important;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border: 1px solid var(--text-secondary-color);
+    font-weight: 500;
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace !important;
 }
 
 /* kbd and mark */

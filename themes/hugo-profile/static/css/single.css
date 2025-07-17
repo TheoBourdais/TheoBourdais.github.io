@@ -27,7 +27,43 @@
 
 #single .page-content img {
     max-width: 100%;
-    border-radius: 1rem;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 1.5rem auto;
+    display: block;
+    /* Ensure crisp rendering */
+    image-rendering: -webkit-optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    /* Force GPU acceleration for smoother rendering */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* For retina and high-DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+    #single .page-content img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: auto;
+    }
+}
+
+/* Reset image-rendering for smooth scaling on modern browsers */
+@supports (image-rendering: -webkit-optimize-contrast) {
+    #single .page-content img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* For browsers that support smooth scaling */
+@supports (image-rendering: auto) {
+    #single .page-content img {
+        image-rendering: auto;
+    }
 }
 
 #single .page-content a {
@@ -58,98 +94,329 @@
 }
 
 #single .page-content blockquote {
-    padding: 20px 30px;
-    border-left: 6px solid var(--primary-color) !important;
-    color: var(--text-secondary-color) !important;
-    font-weight: 600;
-    font-size: 20px;
-    margin: 30px 0;
-    border-radius: 5px;
+    background: var(--background-color) !important;
+    border: none !important;
+    border-left: 4px solid var(--primary-color) !important;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem !important;
+    border-radius: 0 !important;
+    box-shadow: none;
+    position: relative;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
 }
 
 #single .page-content blockquote, #single .page-content blockquote * {
-    background-color: var(--secondary-color) !important;
+    background-color: var(--background-color) !important;
 }
 
-/* table */
-#single .page-content table {
-    width: auto;
-    border-radius: 5px;
-    padding: 0.1rem;
-    margin-bottom: 1.2em;
-    max-width: 100%;
-    display: block;
-    overflow-x: auto;
-    opacity: 0.8;
+#single .page-content blockquote p {
+    margin-bottom: 0.75rem;
 }
 
-#single .page-content table > tr {
-    height: 40px !important;
+#single .page-content blockquote p:last-child {
+    margin-bottom: 0;
 }
 
-#single .page-content table > thead > tr > th {
-    padding: 0.5rem !important;
-    background-color: var(--primary-color) !important;
-    color: var(--secondary-color) !important;
-    border: 1px solid var(--secondary-color);
-    opacity: 0.9;
-}
-#single .page-content table > tbody > tr > td {
-    padding: 0.5rem !important;
-    border: 1px solid var(--secondary-color);
-    background-color: var(--secondary-color) !important;
-    opacity: 0.9;
+#single .page-content blockquote strong {
+    color: #0969da !important;
+    font-weight: 600;
 }
 
-#single .page-content table > thead > tr {
-    background-color: var(--secondary-color) !important;
-    color: var(--secondary-color) !important;
+#single .page-content blockquote code {
+    background: #fff !important;
+    color: #0969da !important;
+    border: 1px solid #d1d9e0;
 }
 
-/* code */
+/* Warning callouts */
+#single .page-content blockquote:has(*:contains("⚠️")) {
+  border-left-color: #bf8700 !important;
+  background: #fff8c5 !important;
+  border-color: #d4a72c;
+}
+
+#single .page-content blockquote:has(*:contains("⚠️")) strong {
+  color: #bf8700 !important;
+}
+
+#single .page-content blockquote:has(*:contains("⚠️")), #single .page-content blockquote:has(*:contains("⚠️")) * {
+  background-color: #fff8c5 !important;
+}
+
+/* Math blockquotes */
+#single .page-content blockquote:has(*:contains("Mathematically")) {
+  border-left-color: #1a7f37 !important;
+  background: #dafbe1 !important;
+  border-color: #2da44e;
+}
+
+#single .page-content blockquote:has(*:contains("Mathematically")) strong {
+  color: #1a7f37 !important;
+}
+
+#single .page-content blockquote:has(*:contains("Mathematically")), #single .page-content blockquote:has(*:contains("Mathematically")) * {
+  background-color: #dafbe1 !important;
+}
+
+/* CAUTION callouts */
+#single .page-content blockquote:has(*:contains("CAUTION")) {
+  border-left-color: #cf222e !important;
+  background: #ffebe9 !important;
+  border-color: #f85149;
+}
+
+#single .page-content blockquote:has(*:contains("CAUTION")) strong {
+  color: #cf222e !important;
+}
+
+#single .page-content blockquote:has(*:contains("CAUTION")), #single .page-content blockquote:has(*:contains("CAUTION")) * {
+  background-color: #ffebe9 !important;
+}
+
+/* Note callouts */
+#single .page-content blockquote:has(*:contains("Note")) {
+  border-left-color: var(--primary-color) !important;
+  background: var(--background-color) !important;
+  border: none !important;
+  border-left: 4px solid var(--primary-color) !important;
+}
+
+#single .page-content blockquote:has(*:contains("Note")) strong {
+  color: var(--primary-color) !important;
+}
+
+#single .page-content blockquote:has(*:contains("Note")), #single .page-content blockquote:has(*:contains("Note")) * {
+  background-color: var(--background-color) !important;
+}
+
+/* Enhanced Code Styling - Clean and Elegant with Copy Button */
+#single .page-content .highlight {
+  background: var(--secondary-color) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0;
+  margin: 1.5rem 0;
+  position: relative;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
 
 #single .page-content pre {
-  border-radius: 0.7em !important;
-  margin: 5px;
-  margin-bottom: 2em;
-  padding: 2em;
-  background-color: var(--secondary-color) !important;
-  color: var(--text-secondary-color) !important;
-  max-height: 450px;
+  background: var(--secondary-color) !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 1rem;
+  margin: 0;
+  overflow-x: auto;
+  position: relative;
+  font-size: 0.9rem;
+  max-height: none;
 }
 
-#single .page-content pre > code {
-  color: var(--text-secondary-color) !important;
+/* Copy button positioned on the highlight container */
+#single .page-content .highlight .copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--text-secondary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.4rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+  opacity: 0.7;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#single .page-content .highlight .copy-button:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  opacity: 1;
+}
+
+#single .page-content .highlight .copy-button.copied {
+  background: var(--primary-color);
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+#single .page-content .highlight .copy-button::before {
+  content: "📋";
+  font-size: 0.9rem;
+}
+
+#single .page-content .highlight .copy-button.copied::before {
+  content: "✓";
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+/* Override Hugo's inline styles for code blocks */
+#single .page-content .highlight,
+#single .page-content .highlight *,
+#single .page-content .highlight div,
+#single .page-content .highlight table,
+#single .page-content .highlight td,
+#single .page-content .highlight pre {
+  background-color: var(--secondary-color) !important;
+  background: var(--secondary-color) !important;
+}
+
+/* Style line numbers but keep them visible */
+#single .page-content .highlight table td:first-child {
+  width: auto !important;
+  padding-right: 0.5rem !important;
+  text-align: right !important;
+  user-select: none !important;
+  opacity: 0.4 !important;
+}
+
+#single .page-content .highlight table td:first-child pre {
+  padding: 1rem 0.5rem 1rem 1rem !important;
+}
+
+/* Make sure code content has proper padding */
+#single .page-content .highlight table td:last-child {
+  width: 100% !important;
+}
+
+#single .page-content .highlight table td:last-child pre {
+  padding: 1rem 1rem 1rem 0 !important;
 }
 
 #single .page-content code {
-  color: var(--primary-color) !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace !important;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-/* kbd and mark */
-
-#single .page-content kbd {
-  color: var(--primary-color) !important;
-  background-color: var(--secondary-color) !important;
+#single .page-content pre code {
+  background: transparent !important;
+  color: var(--text-color) !important;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  display: block;
+  white-space: pre;
 }
 
-#single .page-content mark {
-  color: var(--primary-color) !important;
-  background-color: var(--secondary-color) !important;
+/* Inline code styling */
+#single .page-content p code {
+  background: none !important;
+  color: var(--text-color) !important;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  font-size: 0.85em;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace !important;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* list */
-
-#single .page-content ol, #single .page-content ul {
-    margin-bottom: 1.2em;
-    padding-left: 1.5em;
-    list-style-position: inside;
-    opacity: 0.9;
+/* Subtle syntax highlighting - Tomorrow Light inspired */
+#single .page-content pre code .hljs-keyword {
+  color: var(--primary-color);
+  font-weight: 600;
 }
 
-#single .page-content ol li li, #single .page-content ul li li {
-    margin-bottom: 0.5em;
-    padding-left: 1.5em;
+#single .page-content pre code .hljs-string {
+  color: #718096;
+}
+
+#single .page-content pre code .hljs-number {
+  color: var(--primary-color);
+}
+
+#single .page-content pre code .hljs-comment {
+  color: var(--text-secondary-color);
+  font-style: italic;
+  opacity: 0.7;
+}
+
+#single .page-content pre code .hljs-function {
+  color: var(--text-link-color);
+}
+
+#single .page-content pre code .hljs-variable {
+  color: var(--text-color);
+}
+
+#single .page-content pre code .hljs-operator {
+  color: var(--text-color);
+}
+
+#single .page-content pre code .hljs-punctuation {
+  color: var(--text-color);
+}
+
+#single .page-content pre code .hljs-built_in {
+  color: var(--primary-color);
+}
+
+#single .page-content pre code .hljs-title {
+  color: var(--text-link-color);
+  font-weight: 600;
+}
+
+#single .page-content pre code .hljs-params {
+  color: var(--text-color);
+}
+
+/* Subtle Math Equations - inline style */
+#single .page-content .katex {
+  font-size: 1em;
+  color: #24292f;
+}
+
+#single .page-content .katex-display {
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+#single .page-content .katex-display .katex {
+  font-size: 1.1em;
+}
+
+/* Math in blockquotes */
+#single .page-content blockquote .katex {
+  font-size: 1em;
+  color: inherit !important;
+  background: transparent !important;
+}
+
+#single .page-content blockquote .katex-display {
+  margin: 0.5rem 0;
+  background: transparent !important;
+  text-align: left;
+}
+
+/* Ensure math renders properly in all contexts */
+#single .page-content .katex {
+  font-size: 1em;
+  color: var(--text-color);
+}
+
+#single .page-content .katex-display {
+  margin: 1.5rem 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  text-align: center;
 }
 
 /* sidebar */
@@ -203,37 +470,68 @@
 /*TOC*/
 #single aside.toc {
     padding: .7rem 1rem;
-    max-height: 50vh;
-    overflow: scroll;
+    max-height: 75vh;
+    overflow-y: auto;
+    margin-bottom: 1em;
 }
 
 #single aside.toc h5 {
     margin: .7em 0;
     margin-bottom: 1em;
     color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+#single aside.toc .toc-content {
+    font-size: 0.9rem;
 }
 
 #single aside.toc .toc-content ol, #single aside.toc .toc-content ul {
-    margin-bottom: 1em;
-    padding-left: .5em;
+    margin-bottom: 0.5em;
+    padding-left: 1em;
     list-style: none;
     opacity: 0.9;
 }
 
+#single aside.toc .toc-content ol li, #single aside.toc .toc-content ul li {
+    margin-bottom: 0.5em;
+    line-height: 1.4;
+}
+
 #single aside.toc .toc-content ol li a, #single aside.toc .toc-content ul li a {
-    font-size: 16px;
+    font-size: 14px;
     text-decoration: none;
     color: var(--text-link-color) !important;
-    opacity: 0.9;
+    opacity: 0.8;
+    display: block;
+    padding: 0.2em 0;
+    transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 #single aside.toc .toc-content ol li a:hover, #single aside.toc .toc-content ul li a:hover {
-    color: var(--primary-color);
-    opacity: 1.2;
+    color: var(--primary-color) !important;
+    opacity: 1;
+    text-shadow: 0 0 1px var(--primary-color);
 }
 
-#single aside.toc .toc-content ol li li, #single aside.toc .toc-content ul li li {
-    padding-left: .7em;
+/* Nested TOC items */
+#single aside.toc .toc-content ol li ol, #single aside.toc .toc-content ul li ul {
+    margin-top: 0.3em;
+    padding-left: 1.2em;
+}
+
+#single aside.toc .toc-content ol li ol li a, #single aside.toc .toc-content ul li ul li a {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* Active TOC item (if you want to add active state later) */
+#single aside.toc .toc-content ol li a.active, #single aside.toc .toc-content ul li a.active {
+    color: var(--primary-color) !important;
+    opacity: 1;
+    font-weight: 600;
 }
 
 /* Social */
