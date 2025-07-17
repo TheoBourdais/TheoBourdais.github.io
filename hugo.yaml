@@ -25,8 +25,7 @@ params:
   # Navigation
   navbar:
     align: ms-auto
-    brandLogo: "/images/profile.png"
-    showBrandLogo: true
+    showBrandLogo: false
     brandName: "Theo Bourdais"
     disableSearch: true
     searchPlaceholder: "Search"
@@ -35,12 +34,13 @@ params:
       enable: true
       showOnScrollUp: true
     menus:
-      disableAbout: false
+      disableAbout: true
+      disableNews: false  # Enable News in built-in navbar
       disableExperience: false
       disableEducation: false
       disableProjects: false
-      disableAchievements: false
-      disableContact: false
+      disableAchievements: false  # Enable built-in achievements (Publications) in navbar
+      disableContact: true
 
   # Hero section
   hero:
@@ -48,7 +48,13 @@ params:
     intro: "Hi, my name is"
     title: "Theo Bourdais"
     subtitle: "PhD Student in Applied and Computational Mathematics"
-    content: "I am a PhD student at Caltech working on machine learning, Gaussian processes, and computational mathematics. My research focuses on developing new methods for data analysis and understanding complex systems."
+    content: |-
+      I am a PhD student at Caltech working under [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm) and honored to be a [Kortschak Scholar](https://www.cms.caltech.edu/research/kortschak-scholars).
+
+      My research focuses on Gaussian Processes and their applications in Machine Learning and computational mathematics, particularly:
+      - Computational Hypergraph Discovery
+      - Model Aggregation techniques
+      - Random Matrix Theory applications
     image: "/images/profile.png"
     bottomImage:
       enable: true
@@ -67,9 +73,9 @@ params:
         - icon: fas fa-envelope
           url: mailto:tbourdai@caltech.edu
 
-  # About section
+  # About section - DISABLED to avoid redundancy
   about:
-    enable: true
+    enable: false
     title: "About Me"
     image: "/images/profile.png"
     content: |-
@@ -96,17 +102,20 @@ params:
     enable: true
     title: "Experience"
     items:
-      - job: "PhD Student"
-        company: "California Institute of Technology"
-        companyUrl: "https://www.caltech.edu"
-        date: "2021 - Present"
-        content: "PhD in Applied and Computational Mathematics under Prof. Houman Owhadi. Research on machine learning, Gaussian processes, and computational mathematics."
-      
-      - job: "Research Intern"
+      - job: "Junior Data Engineer"
         company: "Doc.ai (ShareCare)"
         companyUrl: "https://www.sharecare.com"
-        date: "2020"
-        content: "Developed AI models for medical applications, specifically for Myasthenia Gravis symptom tracking using computer vision and smartphone data."
+        date: "2021 - 2022"
+        content: |-
+          Worked on several research projects in Computer Vision for Healthcare:
+          - Study of AI-based symptoms tracking for Myasthenia Gravis (collaboration with UCB)
+          - Automatic medication label reader development
+      
+      - job: "Research Intern"
+        company: "INRIA"
+        companyUrl: "https://www.inria.fr"
+        date: "Summer 2020"
+        content: "Research internship on robust optimisation methods and algorithms."
 
   # Education section
   education:
@@ -117,71 +126,109 @@ params:
         school:
           name: "California Institute of Technology"
           url: "https://www.caltech.edu"
-        date: "2021 - Present"
+        date: "2022 - Present"
         content: |-
-          Advisor: Prof. Houman Owhadi
-          Research focus: Machine learning, Gaussian processes, computational mathematics
+          Advisor: Prof. Houman Owhadi. Research focus: 
+          - Machine learning
+          - Gaussian processes
+          - Computational mathematics
       
-      - title: "Master's in Applied Mathematics"
+      - title: "Master of Mathematics"
+        school:
+          name: "University of Cambridge"
+          url: "https://www.cam.ac.uk"
+        date: "2020 - 2021"
+        content: "Advanced studies in mathematical theory and applications"
+      
+      - title: "Master of Science (Engineering)"
         school:
           name: "École Polytechnique"
           url: "https://www.polytechnique.edu"
-        date: "2019 - 2021"
+        date: "2017 - 2021"
         content: "Specialized in applied mathematics and computational methods"
 
-  # Projects section
+  # Research Interests section (formerly Projects)
   projects:
     enable: true
-    title: "Projects"
+    title: "Research Interests"
     items:
-      - title: "Computational Hypergraph Discovery"
-        content: "A novel method for uncovering unknown functional relationships between variables within datasets using Gaussian Process framework."
+      - title: "Algorithm Discovery"
+        content: "Developing computational frameworks to automatically discover algorithms and functional relationships from data. My work focuses on creating interpretable methods that can uncover the underlying structure of complex systems without requiring prior knowledge of the governing equations."
         image: "/images/CHD/FPUT_subgraph.png"
         featured:
-          name: "Learn More"
-          link: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
+          name: "Explore Research"
+          link: "/publications/"
         badges:
+          - "Computational Hypergraph Discovery"
           - "Gaussian Processes"
           - "Machine Learning"
-          - "PNAS"
         links:
+          - icon: fas fa-file-alt
+            url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
           - icon: fab fa-github
-            url: https://github.com/TheoBourdais/ComputationalHypergraphDiscovery
-          - icon: fas fa-external-link-alt
-            url: https://www.pnas.org/doi/10.1073/pnas.2403449121
+            url: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
+          - icon: fas fa-microphone
+            url: "/talks/chd-talk/"
 
-      - title: "Model Aggregation"
-        content: "A data-driven framework for combining predictions from diverse models to enhance overall accuracy."
+      - title: "Digital Twins"
+        content: "Creating robust digital representations of physical systems by combining multiple models and data sources. My research addresses the challenge of model uncertainty and develops frameworks for aggregating diverse computational models to create more accurate and reliable digital twins."
         image: "/images/aggreg_image.png"
         featured:
           name: "Learn More"
-          link: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
+          link: "/publications/"
         badges:
+          - "Model Aggregation"
           - "Ensemble Methods"
-          - "Machine Learning"
-          - "ICLR 2025"
+          - "Uncertainty Quantification"
         links:
-          - icon: fas fa-external-link-alt
-            url: https://arxiv.org/abs/2409.17267
+          - icon: fas fa-file-alt
+            url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
+          - icon: fas fa-file-alt
+            url: "/publications/pruning-deep-neural-networks-via-a-combination-of-the-marchenko-pastur-distribution-and-regularization/"
+          - icon: fas fa-microphone
+            url: "/talks/model-aggregation-talk/"
 
   # Achievements section
   achievements:
     enable: true
-    title: "Publications"
+    title: "Selected publications"
     items:
-      - title: "Codiscovering graphical structure and functional relationships within data"
-        content: "Published in PNAS (2024). Introduces Computational Hypergraph Discovery framework."
-        url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
-        image: "/images/CHD/FPUT_subgraph.png"
+      - title: "Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization"
+        content: "Posted on arXiv (2025). Novel RMT-based approach for pruning Vision Transformers with state-of-the-art results on ImageNet."
+        url: "/publications/pruning-deep-neural-networks-via-a-combination-of-the-marchenko-pastur-distribution-and-regularization/"
+        image: "/images/Pruning_DNNs_RMT_Example_1_Top_1.png"
       
       - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
         content: "Accepted at ICLR 2025. Novel framework for model combination."
         url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
         image: "/images/aggreg_image.png"
+      
+      - title: "Codiscovering graphical structure and functional relationships within data"
+        content: "Published in PNAS (2024). Introduces Computational Hypergraph Discovery framework."
+        url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
+        image: "/images/CHD/FPUT_subgraph.png"
+      
+  # News section
+  news:
+    enable: true
+    title: "Latest News"
+    items:
+      - date: "03/02/2025"
+        content: "Our paper on Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization was posted on [Arxiv](https://arxiv.org/abs/2503.01922)!"
+      - date: "02/17/2025"
+        content: "I will be giving a talk on Model aggregation at [DTE AICOMAS](https://dte_aicomas_2025.iacm.info/) in Paris."
+      - date: "02/01/2025"
+        content: "Our paper on Model aggregation was accepted at ICLR 2025!"
+      - date: "09/27/2024"
+        content: "Our paper [Model aggregation: minimizing empirical variance outperforms minimizing empirical error](/publications/modelaggregation/) was posted on Arxiv!"
+      - date: "08/01/2024"
+        content: "Our paper [Codiscovering graphical structure and functional relationships within data: A Gaussian Process framework for connecting the dots](https://www.pnas.org/doi/10.1073/pnas.2403449121) was published in PNAS!"
+      - date: "02/27/2024"
+        content: "I will be giving a talk on Computational Hypergraph Discovery at the [SIAM UQ 2024](https://www.siam.org/conferences/cm/conference/uq24) conference in Trieste."
 
   # Contact section
   contact:
-    enable: true
+    enable: false
     title: "Get In Touch"
     content: "Feel free to reach out if you'd like to discuss research, collaboration opportunities, or have any questions about my work."
     email: "tbourdai@caltech.edu"
@@ -192,7 +239,7 @@ params:
       path: "posts"
       count: 3
       title: "Recent Posts"
-      enable: true
+      enable: false  # Disable recent posts
       disableFeaturedImage: false
     socialNetworks:
       github: https://github.com/TheoBourdais
@@ -219,9 +266,9 @@ markup:
 # Menu configuration
 menu:
   main:
-    - identifier: publications
-      name: Publications
-      title: Publications
+    - identifier: all-publications
+      name: All Publications
+      title: All Publications
       url: /publications
       weight: 1
     - identifier: talks
