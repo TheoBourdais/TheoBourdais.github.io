@@ -1,0 +1,19 @@
+/* Default font for body */
+body {
+    font-family: "Lora", serif !important;
+}
+
+/* secondary font */
+.secondary-font, #secondary-font {
+    font-family: "Lora", serif !important;
+}
+
+/* primary font */
+.primary-font, #primary-font {
+    font-family: "Lora", serif !important;
+}
+
+/* Default font */
+.default-font, #default-font {
+    font-family: "Lora", serif !important;
+}
