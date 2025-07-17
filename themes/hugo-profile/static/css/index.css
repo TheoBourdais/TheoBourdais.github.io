@@ -120,11 +120,11 @@ header .navbar.animate {
 }
 
 #hero .image {
-    width: 250px;
-    height: 250px;
+    width: 450px;
+    height: 450px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 50%;
+    border-radius: 1rem;
 }
 
 #hero .image.animate img {
