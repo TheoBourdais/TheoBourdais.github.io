@@ -249,7 +249,7 @@ Another way to decide if a node has ancestors and which kernel to use is to see 
 In this situation, the following diagram summarizes the decision process:
 
 ![Decision diagram](/images/CHD/kernel_slection.png)
-> $x_1$ is the node of interest. The signal-to-noise ratio is denoted $\frac{\nu(s)}{\nu(n)+\nu(s)}$, and the threshold is 0.5.
+Note that $x_1$ is the node of interest. The signal-to-noise ratio is denoted $\frac{\nu(s)}{\nu(n)+\nu(s)}$, and the threshold is 0.5.
 
 ### Identifying the Ancestors of our chosen node
 
@@ -269,7 +269,7 @@ Another method of choice is shown prominently in our article as it is very simpl
 
 ![pruning diagram](/images/CHD/pruning_process_schematics.png)
 
-> $x_1$ is the node of interest, $x_2,x_3,x_4,x_5$ are potential ancestors. The signal-to-noise ratio is denoted $\frac{\nu(s)}{\nu(n)+\nu(s)}$, and the threshold is 0.5.
+Note that $x_1$ is the node of interest, $x_2,x_3,x_4,x_5$ are potential ancestors. The signal-to-noise ratio is denoted $\frac{\nu(s)}{\nu(n)+\nu(s)}$, and the threshold is 0.5.
 
 ### Summary of the ancestor identification process
 
