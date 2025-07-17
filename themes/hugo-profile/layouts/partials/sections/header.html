@@ -23,24 +23,40 @@
 {{ $showNavBarOnScrollUp := .Site.Params.navbar.stickyNavBar.showOnScrollUp | default false }}
 <script>
     var prevScrollPos = window.pageYOffset;
-    window.addEventListener("scroll", function showHeaderOnScroll() {
+    var ticking = false;
+    
+    function updateHeader() {
         let profileHeaderElem = document.getElementById("profileHeader");
         let currentScrollPos = window.pageYOffset;
-        let resetHeaderStyle = false;
         let showNavBarOnScrollUp = {{ $showNavBarOnScrollUp }};
-        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
-        if (showNavBar) {
-            profileHeaderElem.classList.add("showHeaderOnTop");
+        
+        // Add/remove scrolled class for shadow effect
+        if (currentScrollPos === 0) {
+            profileHeaderElem.classList.remove("scrolled");
         } else {
-            resetHeaderStyle = true;
+            profileHeaderElem.classList.add("scrolled");
         }
-        if(currentScrollPos === 0) {
-            resetHeaderStyle = true;
+        
+        // Determine if header should be visible
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        
+        if (currentScrollPos === 0 || showNavBar) {
+            // Show header
+            profileHeaderElem.classList.remove("hideHeaderOnScroll");
+        } else {
+            // Hide header
+            profileHeaderElem.classList.add("hideHeaderOnScroll");
         }
-        if(resetHeaderStyle) {
-            profileHeaderElem.classList.remove("showHeaderOnTop");
-        }
+        
         prevScrollPos = currentScrollPos;
+        ticking = false;
+    }
+    
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        if (!ticking) {
+            requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
     });
 </script>
 {{ end }}
