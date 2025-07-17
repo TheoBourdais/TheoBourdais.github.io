@@ -1,0 +1,109 @@
+/* Custom styles for profile photo and news section */
+
+/* Make profile photo square with center cropping */
+.hero .image img,
+.navbar-brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+}
+
+/* Ensure consistent container sizing for profile photo */
+.hero .image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1rem; /* Changed from 50% to 1rem for square with rounded corners */
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Fix text opacity inconsistency in hero section */
+#hero p {
+    opacity: 0.9 !important;
+}
+
+/* News section styling to match site theme */
+#news {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#news h3 {
+    color: var(--text-secondary-color) !important;
+    margin-bottom: 2rem;
+}
+
+.news-timeline {
+    position: relative;
+}
+
+.news-item {
+    border-bottom: 1px solid var(--secondary-color) !important;
+    opacity: 0.9;
+}
+
+.news-item:last-child {
+    border-bottom: none !important;
+}
+
+.news-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.news-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-content a:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* Custom hover effects for research interests and publications */
+
+/* Research interests (projects) - Make it work exactly like achievements */
+/* Use higher specificity and !important to override theme defaults */
+#projects .card {
+    border: 2px solid transparent !important;
+    transition: box-shadow .2s linear, opacity .2s linear !important;
+}
+
+#projects .card:hover {
+    border: 2px solid var(--text-color) !important;
+    transition: .3s !important;
+    transform: none !important;
+    box-shadow: 0 0 36px rgba(0,0,0,0.1) !important;
+}
+
+/* Override the original floating effect completely */
+#projects .card:hover {
+    border: 2px solid var(--text-color) !important;
+    transition: .3s !important;
+    transform: none !important;
+    box-shadow: 0 0 36px rgba(0,0,0,0.1) !important;
+}
+
+/* Publications (achievements) - Set cursor to pointer (hand) */
+#achievements .card {
+    cursor: pointer !important;
+}
+
+#achievements a.card {
+    cursor: pointer !important;
+}
+
+#achievements .card:hover {
+    cursor: pointer !important;
+}
