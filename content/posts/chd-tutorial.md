@@ -15,38 +15,38 @@ This post introduces Computational Hypergraph Discovery (CHD), a novel method fo
 > **You can find the repository for the paper [here](https://github.com/TheoBourdais/ComputationalHypergraphDiscovery/tree/v1.1.0)**
 
 >**Full code snippet**: Here is the full code we will use in this post (see the [repo](https://github.com/TheoBourdais/ComputationalHypergraphDiscovery/tree/v1.1.0) for installing ComputationalHypergraphDiscovery): 
->```python
->import numpy as np
->import pandas as pd
->import ComputationalHypergraphDiscovery as CHD
->from ComputationalHypergraphDiscovery.Modes import *
->
-># Load the data
->dataframe = pd.read_csv('SachsData.csv')
-># Normalize the data
->data=dataframe.values
->data = (data - np.mean(data, axis=0)) / np.std(data, axis=0)
->node_names=dataframe.columns
->
-># Define the kernel
->kernel = 0.1*LinearMode() + 0.01*QuadraticMode()
-># Set up CHD
->graph_discovery = CHD.GraphDiscovery(data.T,node_names,kernel)
-># Perform CHD
->graph_discovery.fit()
->graph_discovery.plot_graph()
->
-># Refine the graph with clusters
->clusters=[
->    ['$PKC$','$P38$','$Jnk$'],
->    ['$Erk$','$Akt$','$PKA$'],
->    ['$Raf$','$Mek$'],
->    ['$Plcg$','$PIP2$','$PIP3$']
->]
->graph_discovery2=graph_discovery.prepare_new_graph_with_clusters(clusters)
->graph_discovery2.fit()
->graph_discovery2.plot_graph()
->```
+```python
+import numpy as np
+import pandas as pd
+import ComputationalHypergraphDiscovery as CHD
+from ComputationalHypergraphDiscovery.Modes import *
+
+# Load the data
+dataframe = pd.read_csv('SachsData.csv')
+# Normalize the data
+data=dataframe.values
+data = (data - np.mean(data, axis=0)) / np.std(data, axis=0)
+node_names=dataframe.columns
+
+# Define the kernel
+kernel = 0.1*LinearMode() + 0.01*QuadraticMode()
+# Set up CHD
+graph_discovery = CHD.GraphDiscovery(data.T,node_names,kernel)
+# Perform CHD
+graph_discovery.fit()
+graph_discovery.plot_graph()
+
+# Refine the graph with clusters
+clusters=[
+    ['$PKC$','$P38$','$Jnk$'],
+    ['$Erk$','$Akt$','$PKA$'],
+    ['$Raf$','$Mek$'],
+    ['$Plcg$','$PIP2$','$PIP3$']
+]
+graph_discovery2=graph_discovery.prepare_new_graph_with_clusters(clusters)
+graph_discovery2.fit()
+graph_discovery2.plot_graph()
+```
 
 ## CHD: Revealing the Network Behind the Data 
 
