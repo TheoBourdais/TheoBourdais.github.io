@@ -50,18 +50,12 @@ params:
     title: "Theo Bourdais"
     subtitle: "PhD Student in Applied and Computational Mathematics"
     content: |-
-      I am a PhD student at Caltech working under [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm) and honored to be a [Kortschak Scholar](https://www.cms.caltech.edu/research/kortschak-scholars).
+      I am a PhD student at Caltech working with [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm). I am also grateful to be supported by the [Kortschak Scholar program](https://www.cms.caltech.edu/research/kortschak-scholars).
 
-      My research focuses on Gaussian Processes and their applications in Machine Learning and computational mathematics, particularly:
-      - Computational Hypergraph Discovery
-      - Model Aggregation techniques
-      - Random Matrix Theory applications
-
-      TODO:
-      - add research interests pages
-      - check style of website
-      - add new paper
-      - add blog post of new paper
+      I focus on Machine Learning for Scientific Discovery. In my research, I use
+      - Gaussian Processes
+      - Computer Vision, Natural Language Processing, and Reinforcement Learning
+      - Applied Mathematics, such as Random Matrix Theory and Partial Differential Equations
     image: "/images/profile.png"
     bottomImage:
       enable: true
@@ -110,6 +104,13 @@ params:
     enable: true
     title: "Experience"
     items:
+      - job: "Research Associate"
+        company: "NASA Jet Propulsion Laboratory (JPL)"
+        companyUrl: "https://www.jpl.nasa.gov"
+        date: "2024 - 2025"
+        content: |-
+          Investigated applying my research to JPL's aerospace applications, in the context of Digital Twins.
+      
       - job: "Junior Data Engineer"
         company: "Doc.ai (ShareCare)"
         companyUrl: "https://www.sharecare.com"
@@ -163,6 +164,9 @@ params:
       - title: "Algorithm Discovery"
         #content: "Developing computational frameworks to automatically discover algorithms and functional relationships from data. My work focuses on creating interpretable methods that can uncover the underlying structure of complex systems without requiring prior knowledge of the governing equations."
         image: "/images/binary_code.jpg"
+        featured:
+          name: "Learn More"
+          link: "/research-areas/algorithm-discovery/"
         badgeLinks:
           - name: "Computational Hypergraph Discovery"
             url: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
@@ -174,6 +178,9 @@ params:
       - title: "Digital Twins"
         #content: "Creating robust digital representations of physical systems by combining multiple models and data sources."
         image: "/images/Spherical_Fourier_Neural-500x282.png"
+        featured:
+          name: "Learn More"
+          link: "/research-areas/digital-twins/"
         badgeLinks:
           - name: "Model Aggregation"
             url: "https://en.wikipedia.org/wiki/Ensemble_learning"
@@ -187,10 +194,10 @@ params:
     enable: true
     title: "Selected publications"
     items:
-      - title: "Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization"
-        content: "Posted on arXiv (2025). Novel RMT-based approach for pruning Vision Transformers with state-of-the-art results on ImageNet."
-        url: "/publications/pruning-deep-neural-networks-via-a-combination-of-the-marchenko-pastur-distribution-and-regularization/"
-        image: "/images/ViT_base_MP_fit.png"
+      - title: "Discovering Algorithms with Computational Language Processing"
+        content: "Posted on arXiv (2025). Novel framework for automating algorithm discovery using computational tokens and reinforcement learning."
+        url: "/publications/discovering-algorithms-with-computational-language-processing/"
+        image: "/images/figscience2.png"
       
       - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
         content: "Accepted at ICLR 2025. Novel framework for model combination."
