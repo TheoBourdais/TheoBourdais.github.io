@@ -1,0 +1,129 @@
+/* light mode */
+.light > *{
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+.light > #footer-socialNetworks-github-svg-path{
+    fill: none;
+}
+
+/* dark mode */
+.dark {
+    --background-color: var(--background-color-dark) !important;
+    --secondary-background-color: var(--secondary-background-color-dark) !important;
+    --text-color: var(--text-color-dark) !important;
+    --text-secondary-color: var(--text-secondary-color-dark) !important;
+    --text-link-color: var(--text-link-color-dark) !important;
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+}
+
+.dark #footer-socialNetworks-github-svg-path{
+    fill: #FFFFFF;
+}
+
+.text-secondary {
+    color: var(--text-secondary-color) !important;
+}
+
+#theme-toggle:focus {
+    outline: 0;
+}
+
+#theme-toggle svg {
+    height: 18px;
+}
+
+button#theme-toggle {
+    border: none;
+    font-size: 26px;
+    margin: auto 4px;
+}
+
+body.dark #moon {
+    vertical-align: middle;
+    display: none;
+}
+
+body:not(.dark) #sun {
+    display: none;
+}
+
+body *::selection {
+    color: var(--text-color) !important;
+    background-color: var(--primary-color) !important;
+}
+
+/* Custom styles for profile photo and news section */
+
+/* Make profile photo square with center cropping */
+.hero .image img,
+.navbar-brand img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    aspect-ratio: 1 / 1;
+}
+
+/* Ensure consistent container sizing for profile photo */
+.hero .image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 1rem; /* Changed from 50% to 1rem for square with rounded corners */
+}
+
+.navbar-brand img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Fix text opacity inconsistency in hero section */
+#hero p {
+    opacity: 0.9 !important;
+}
+
+/* News section styling to match site theme */
+#news {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#news h3 {
+    color: var(--text-secondary-color) !important;
+    margin-bottom: 2rem;
+}
+
+.news-timeline {
+    position: relative;
+}
+
+.news-item {
+    border-bottom: 1px solid var(--secondary-color) !important;
+    opacity: 0.9;
+}
+
+.news-item:last-child {
+    border-bottom: none !important;
+}
+
+.news-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.news-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-content a:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+}

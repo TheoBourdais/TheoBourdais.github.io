@@ -1,0 +1,260 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.description | default .Summary }}">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
+
+<!-- fontawesome -->
+<script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+
+<style>
+/* Talk item hover effects */
+.talk-item.clickable {
+  cursor: pointer;
+}
+
+.talk-item.clickable:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-left-color: #0056b3 !important;
+}
+
+/* Resource badges */
+.resource-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.resource-badge.slides {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.resource-badge.video {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+</style>
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="single">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-12 col-lg-9">
+        <div class="pr-lg-4">
+          <div class="title mb-5">
+            <h1 class="text-center mb-4">{{ .Title }}</h1>
+            
+            <!-- Description -->
+            {{ if .Params.description }}
+            <div class="text-center text-muted">
+              <em>{{ .Params.description }}</em>
+            </div>
+            {{ end }}
+          </div>
+
+          <!-- Main Content -->
+          <article class="page-content p-2" id="page-content">
+            {{ .Content | emojify }}
+          </article>
+
+          <!-- Research Experience Section -->
+          {{ if .Params.experience }}
+          <section class="research-experience mt-5" id="research-experience">
+            <h3 class="mb-3">Research Experience</h3>
+            {{ range .Params.experience }}
+            <div class="experience-item mb-3 p-3" style="background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
+              <h5 class="mb-1">{{ .title }} - {{ .organization }}</h5>
+              <div class="text-muted mb-2"><small>{{ .date }}</small></div>
+              <p class="mb-0"><em>{{ .focus }}</em></p>
+            </div>
+            {{ end }}
+          </section>
+          {{ end }}
+
+          <!-- Publications Section -->
+          {{ if .Params.related_publications }}
+          <section class="publications mt-5" id="publications">
+            <h3 class="mb-4">Publications & Impact</h3>
+            
+            <div class="row mb-4">
+              {{ range .Params.related_publications }}
+              <div class="col-md-6 mb-3">
+                <div class="publication-card h-100 p-3" style="background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff;">
+                  <h6 class="mb-2">
+                    <a href="{{ .url }}" class="text-decoration-none">{{ .title }}</a>
+                  </h6>
+                  <div class="text-muted mb-2"><small>{{ .venue }}</small></div>
+                  <div class="d-flex gap-2">
+                    <a href="{{ .url }}" class="btn btn-outline-primary btn-sm">
+                      <i class="fas fa-file-alt me-1"></i>Paper
+                    </a>
+                    {{ if .github }}
+                    <a href="{{ .github }}" target="_blank" class="btn btn-outline-dark btn-sm">
+                      <i class="fab fa-github me-1"></i>Code
+                    </a>
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </section>
+          {{ end }}
+
+          <!-- Talks Section -->
+          {{ if .Params.related_talks }}
+          <section class="talks mt-5" id="talks">
+            <h3 class="mb-4">Conference Presentations</h3>
+            
+            {{ $all_talks := slice }}
+            {{ if .Params.related_talks.model_aggregation }}
+              {{ range .Params.related_talks.model_aggregation }}
+                {{ $all_talks = $all_talks | append . }}
+              {{ end }}
+            {{ end }}
+            {{ if .Params.related_talks.chd }}
+              {{ range .Params.related_talks.chd }}
+                {{ $all_talks = $all_talks | append . }}
+              {{ end }}
+            {{ end }}
+            
+            {{ $sorted_talks := sort $all_talks "date" "desc" }}
+            
+            <div class="talks-list">
+              {{ range $sorted_talks }}
+              <div class="talk-item p-3 mb-2 clickable" 
+                   style="background-color: #f8f9fa; border-radius: 8px; border-left: 4px solid #007bff; transition: all 0.3s ease;"
+                   onclick="window.location.href='{{ .talk_url }}'">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <h6 class="mb-1">{{ .name }}</h6>
+                    <div class="text-primary small mb-1">
+                      <i class="fas fa-microphone me-1"></i>{{ .subject }}
+                    </div>
+                    <div class="text-muted small">
+                      <i class="fas fa-calendar-alt me-1"></i>{{ dateFormat "January 2, 2006" .date }}
+                    </div>
+                  </div>
+                  <div class="text-end">
+                    <div class="text-muted small">
+                      <i class="fas fa-map-marker-alt me-1"></i>{{ .location }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {{ end }}
+            </div>
+          </section>
+          {{ end }}
+
+        </div>
+      </div>
+      
+      <!-- Right Sidebar -->
+      <div class="col-sm-12 col-md-12 col-lg-3">
+        <div id="stickySideBar" class="sticky-sidebar">
+          
+          <!-- Table of Contents -->
+          <aside class="toc">
+            <h5>Table of Contents</h5>
+            <div class="toc-content">
+              {{ .TableOfContents }}
+              
+              <!-- Add procedurally generated sections to TOC -->
+              {{ if or .Params.experience .Params.related_publications .Params.related_talks }}
+              <div class="generated-toc-sections">
+                {{ if .Params.experience }}
+                <ul>
+                  <li><a href="#research-experience">Research Experience</a></li>
+                </ul>
+                {{ end }}
+                
+                {{ if .Params.related_publications }}
+                <ul>
+                  <li><a href="#publications">Publications & Impact</a></li>
+                </ul>
+                {{ end }}
+                
+                {{ if .Params.related_talks }}
+                <ul>
+                  <li><a href="#talks">Conference Presentations</a></li>
+                </ul>
+                {{ end }}
+              </div>
+              {{ end }}
+            </div>
+          </aside>
+
+          <!-- Quick Stats -->
+          <aside class="research-stats mt-4">
+            <strong class="small">Research Summary:</strong>
+            <div class="mt-1 small text-muted">
+              {{ if .Params.related_publications }}
+              <div><i class="fas fa-file-alt me-1"></i>{{ len .Params.related_publications }} Publications</div>
+              {{ end }}
+              {{ if .Params.related_talks }}
+              {{ $total_talks := 0 }}
+              {{ if .Params.related_talks.model_aggregation }}{{ $total_talks = add $total_talks (len .Params.related_talks.model_aggregation) }}{{ end }}
+              {{ if .Params.related_talks.chd }}{{ $total_talks = add $total_talks (len .Params.related_talks.chd) }}{{ end }}
+              <div><i class="fas fa-microphone me-1"></i>{{ $total_talks }} Conference Talks</div>
+              {{ end }}
+            </div>
+          </aside>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Back to top button -->
+  <button class="p-2 px-3" onclick="topFunction()" id="topScroll">
+    <i class="fas fa-angle-up"></i>
+  </button>
+</section>
+
+<script>
+  var topScroll = document.getElementById("topScroll");
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      topScroll.style.display = "block";
+    } else {
+      topScroll.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  // To set height of sticky sidebar dynamically
+  let researchStickySideBar = document.getElementById("stickySideBar");
+  let researchStickyNavBar = {{ if .Site.Params.navbar.stickyNavBar.enable }}true{{ else }}false{{ end }};
+  if(researchStickyNavBar) {
+    let headerElem = document.getElementById("profileHeader");
+    let headerHeight = headerElem.offsetHeight + 15;
+    researchStickySideBar.style.top = headerHeight + "px";
+  } else {
+    researchStickySideBar.style.top = "50px";
+  }
+
+  // Smooth scrolling to section
+  function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+</script>
+
+{{ end }}

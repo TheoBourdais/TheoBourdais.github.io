@@ -1,0 +1,300 @@
+baseURL: https://TheoBourdais.github.io/
+languageCode: en-us
+title: "Theo Bourdais"
+theme: "hugo-profile"
+
+params:
+  favicon: "/images/site-logo.png"
+  name: "Theo Bourdais"
+  title: "PhD Student @ Caltech"
+  description: "PhD Student in Applied and Computational Mathematics at Caltech"
+  author: "Theo Bourdais"
+  email: "tbourdai@caltech.edu"
+  location: "California Institute of Technology"
+  
+  # Social links
+  socialIcons:
+    - name: "github"
+      url: "https://github.com/TheoBourdais"
+    - name: "googlescholar"
+      url: "https://scholar.google.com/citations?user=Vr_DMBoAAAAJ&hl=fr"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/theobourdais/"
+    - name: "email"
+      url: "mailto:tbourdai@caltech.edu"
+
+  # Navigation
+  navbar:
+    align: ms-auto
+    showBrandLogo: false
+    brandName: "Theo Bourdais"
+    disableSearch: true
+    searchPlaceholder: "Search"
+    enableSeparator: true
+    stickyNavBar:
+      enable: true
+      showOnScrollUp: true
+    menus:
+      disableAbout: true
+      disableNews: false  # Enable News in built-in navbar
+      disableExperience: false
+      disableEducation: false
+      disableProjects: false
+      disableAchievements: false  # Enable built-in achievements (Publications) in navbar
+      disableContact: true
+
+  # Hero section
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "Theo Bourdais"
+    subtitle: "PhD Student in Applied and Computational Mathematics"
+    content: |-
+      I am a PhD student at Caltech working with [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm). I am also grateful to be supported by the [Kortschak Scholar program](https://www.cms.caltech.edu/research/kortschak-scholars).
+
+      I focus on Machine Learning for Scientific Discovery. In my research, I use
+      - Gaussian Processes
+      - Computer Vision, Natural Language Processing, and Reinforcement Learning
+      - Applied Mathematics, such as Random Matrix Theory and Partial Differential Equations
+    image: "/images/profile.png"
+    bottomImage:
+      enable: true
+    button:
+      enable: true
+      name: "Resume"
+      url: "/files/cv.pdf"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/TheoBourdais
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/theobourdais/
+        - icon: fas fa-envelope
+          url: mailto:tbourdai@caltech.edu
+
+  # About section - DISABLED to avoid redundancy
+  about:
+    enable: false
+    title: "About Me"
+    image: "/images/profile.png"
+    content: |-
+      I am a PhD student in Applied and Computational Mathematics at the California Institute of Technology (Caltech), working under the supervision of Prof. Houman Owhadi. My research interests lie at the intersection of machine learning, Gaussian processes, and computational mathematics.
+
+      My work focuses on developing new theoretical frameworks and practical algorithms for understanding complex systems and data. I am particularly interested in:
+      - Computational Hypergraph Discovery
+      - Model Aggregation techniques
+      - Gaussian Process methods
+      - Random Matrix Theory applications in machine learning
+
+    skills:
+      enable: true
+      title: "Here are a few technologies I've been working with recently:"
+      items:
+        - "Python"
+        - "Machine Learning"
+        - "Gaussian Processes"
+        - "Scientific Computing"
+        - "Deep Learning"
+        - "Random Matrix Theory"
+
+  # Experience section
+  experience:
+    enable: true
+    title: "Experience"
+    items:
+      - job: "Research Associate"
+        company: "NASA Jet Propulsion Laboratory (JPL)"
+        companyUrl: "https://www.jpl.nasa.gov"
+        date: "2024 - 2025"
+        content: |-
+          Investigated applying my research to JPL's aerospace applications, in the context of Digital Twins.
+      
+      - job: "Junior Data Engineer"
+        company: "Doc.ai (ShareCare)"
+        companyUrl: "https://www.sharecare.com"
+        date: "2021 - 2022"
+        content: |-
+          Worked on several research projects in Computer Vision for Healthcare:
+          - Study of AI-based symptoms tracking for Myasthenia Gravis (collaboration with UCB)
+          - Automatic medication label reader development
+      
+      - job: "Research Intern"
+        company: "INRIA"
+        companyUrl: "https://www.inria.fr"
+        date: "Summer 2020"
+        content: "Research internship on robust optimisation methods and algorithms."
+
+  # Education section
+  education:
+    enable: true
+    title: "Education"
+    items:
+      - title: "PhD in Applied and Computational Mathematics"
+        school:
+          name: "California Institute of Technology"
+          url: "https://www.caltech.edu"
+        date: "2022 - Present"
+        content: |-
+          Advisor: Prof. Houman Owhadi. Research focus: 
+          - Machine learning
+          - Gaussian processes
+          - Computational mathematics
+      
+      - title: "Master of Mathematics"
+        school:
+          name: "University of Cambridge"
+          url: "https://www.cam.ac.uk"
+        date: "2020 - 2021"
+        content: "Advanced studies in mathematical theory and applications"
+      
+      - title: "Master of Science (Engineering)"
+        school:
+          name: "École Polytechnique"
+          url: "https://www.polytechnique.edu"
+        date: "2017 - 2021"
+        content: "Specialized in applied mathematics and computational methods"
+
+  # Research Interests section (formerly Projects)
+  projects:
+    enable: true
+    title: "Research Interests"
+    items:
+      - title: "Algorithm Discovery"
+        #content: "Developing computational frameworks to automatically discover algorithms and functional relationships from data. My work focuses on creating interpretable methods that can uncover the underlying structure of complex systems without requiring prior knowledge of the governing equations."
+        image: "/images/binary_code.jpg"
+        featured:
+          name: "Learn More"
+          link: "/research-areas/algorithm-discovery/"
+        badgeLinks:
+          - name: "Computational Hypergraph Discovery"
+            url: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
+          - name: "Gaussian Processes"
+            url: "https://en.wikipedia.org/wiki/Gaussian_process"
+          - name: "Machine Learning"
+            url: "https://en.wikipedia.org/wiki/Machine_learning"
+
+      - title: "Digital Twins"
+        #content: "Creating robust digital representations of physical systems by combining multiple models and data sources."
+        image: "/images/Spherical_Fourier_Neural-500x282.png"
+        featured:
+          name: "Learn More"
+          link: "/research-areas/digital-twins/"
+        badgeLinks:
+          - name: "Model Aggregation"
+            url: "https://en.wikipedia.org/wiki/Ensemble_learning"
+          - name: "Ensemble Methods"
+            url: "https://en.wikipedia.org/wiki/Ensemble_learning"
+          - name: "Uncertainty Quantification"
+            url: "https://en.wikipedia.org/wiki/Uncertainty_quantification"
+
+  # Achievements section
+  achievements:
+    enable: true
+    title: "Selected publications"
+    items:
+      - title: "Discovering Algorithms with Computational Language Processing"
+        content: "Posted on arXiv (2025). Novel framework for automating algorithm discovery using computational tokens and reinforcement learning."
+        url: "/publications/discovering-algorithms-with-computational-language-processing/"
+        image: "/images/figscience2.png"
+      
+      - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
+        content: "Accepted at ICLR 2025. Novel framework for model combination."
+        url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
+        image: "/images/aggreg_image.png"
+      
+      - title: "Codiscovering graphical structure and functional relationships within data"
+        content: "Published in PNAS (2024). Introduces Computational Hypergraph Discovery framework."
+        url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
+        image: "/images/CHD/FPUT_subgraph.png"
+      
+  # News section
+  news:
+    enable: true
+    title: "Latest News"
+    items:
+      - date: "03/02/2025"
+        content: "Our paper on Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization was posted on [Arxiv](https://arxiv.org/abs/2503.01922)!"
+      - date: "02/17/2025"
+        content: "I will be giving a talk on Model aggregation at [DTE AICOMAS](https://dte_aicomas_2025.iacm.info/) in Paris."
+      - date: "02/01/2025"
+        content: "Our paper on Model aggregation was accepted at ICLR 2025!"
+      - date: "09/27/2024"
+        content: "Our paper [Model aggregation: minimizing empirical variance outperforms minimizing empirical error](/publications/modelaggregation/) was posted on Arxiv!"
+      - date: "08/01/2024"
+        content: "Our paper [Codiscovering graphical structure and functional relationships within data: A Gaussian Process framework for connecting the dots](https://www.pnas.org/doi/10.1073/pnas.2403449121) was published in PNAS!"
+      - date: "02/27/2024"
+        content: "I will be giving a talk on Computational Hypergraph Discovery at the [SIAM UQ 2024](https://www.siam.org/conferences/cm/conference/uq24) conference in Trieste."
+
+  # Contact section
+  contact:
+    enable: false
+    title: "Get In Touch"
+    content: "Feel free to reach out if you'd like to discuss research, collaboration opportunities, or have any questions about my work."
+    email: "tbourdai@caltech.edu"
+    btnName: "Email me"
+
+  footer:
+    recentPosts:
+      path: "posts"
+      count: 3
+      title: "Recent Posts"
+      enable: false  # Disable recent posts
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/TheoBourdais
+      linkedin: https://www.linkedin.com/in/theobourdais/
+
+# Markup settings
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    lineNos: true
+    style: github
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    hl_Lines: ""
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNumbersInTable: true
+    noClasses: true
+    tabWidth: 4
+
+# Menu configuration
+menu:
+  main:
+    - identifier: all-publications
+      name: All Publications
+      title: All Publications
+      url: /publications
+      weight: 1
+    - identifier: talks
+      name: Talks
+      title: Talks
+      url: /talks
+      weight: 2
+    - identifier: posts
+      name: Blog
+      title: Blog posts
+      url: /posts
+      weight: 3
+
+# Page settings
+pagination:
+  pagerSize: 3
+googleAnalytics: # Add your Google Analytics ID if you have one
+
+# Build settings
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+# Permalinks
+permalinks:
+  posts: /posts/:year/:month/:day/:title/
+  publications: /publications/:title/
+  talks: /talks/:title/

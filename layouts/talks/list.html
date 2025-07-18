@@ -1,0 +1,151 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/projects.css" media="all">
+
+<!-- fontawesome -->
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container pt-5" id="talks-list">
+    <h2 class="text-center pb-4">{{ .Title }}</h2>
+    
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            {{ range .Pages.ByDate.Reverse }}
+            <div class="card mb-4 talk-card" style="cursor: pointer;" onclick="window.location.href='{{ .RelPermalink }}'">
+                <div class="card-body">
+                    <div class="row">
+                        <!-- Image Column -->
+                        {{ if .Params.image }}
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <img src="{{ .Params.image }}" alt="{{ .Title }}" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-9">
+                        {{ else }}
+                        <div class="col-md-12">
+                        {{ end }}
+                            <!-- Title -->
+                            <h5 class="card-title mb-3">
+                                <a href="{{ .RelPermalink }}" class="text-decoration-none" onclick="event.stopPropagation();">
+                                    {{ .Title }}
+                                </a>
+                            </h5>
+                            
+                            <!-- Tags -->
+                            {{ if .Params.tags }}
+                            <div class="mb-3">
+                                {{ range .Params.tags }}
+                                <span class="badge bg-secondary me-1">{{ . }}</span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                            
+                            <!-- Short Description -->
+                            {{ if .Params.summary }}
+                            <p class="card-text text-muted">{{ .Params.summary }}</p>
+                            {{ else if .Summary }}
+                            <p class="card-text text-muted">{{ .Summary | truncate 300 }}</p>
+                            {{ end }}
+                            
+                            <!-- Recent Venues Preview -->
+                            {{ if .Params.venues }}
+                            <div class="venues-preview mb-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    {{ range first 3 .Params.venues }}
+                                    <div class="venue-pill">
+                                        <strong>{{ .name }}</strong>
+                                        {{ if .location }}
+                                        <span class="text-muted">• {{ .location }}</span>
+                                        {{ end }}
+                                        {{ if .date }}
+                                        <span class="text-muted">• {{ dateFormat "Jan 2006" .date }}</span>
+                                        {{ end }}
+                                    </div>
+                                    {{ end }}
+                                    {{ if gt (len .Params.venues) 3 }}
+                                    <div class="venue-pill more-venues">
+                                        +{{ sub (len .Params.venues) 3 }} more
+                                    </div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                            {{ end }}
+                            
+                            <!-- Action Buttons -->
+                            <div class="mt-3">
+                                <div class="d-flex flex-wrap gap-2">
+                                    {{ if .Params.url_slides }}
+                                    <a href="{{ .Params.url_slides }}" target="_blank" class="btn btn-outline-primary btn-sm" onclick="event.stopPropagation();">
+                                        <i class="fas fa-file-powerpoint me-1"></i>Slides
+                                    </a>
+                                    {{ end }}
+                                    
+                                    {{ if .Params.url_video }}
+                                    <a href="{{ .Params.url_video }}" target="_blank" class="btn btn-outline-danger btn-sm" onclick="event.stopPropagation();">
+                                        <i class="fas fa-video me-1"></i>Video
+                                    </a>
+                                    {{ end }}
+                                    
+                                    {{ if .Params.url_paper }}
+                                    <a href="{{ .Params.url_paper }}" target="_blank" class="btn btn-outline-success btn-sm" onclick="event.stopPropagation();">
+                                        <i class="fas fa-file-pdf me-1"></i>Paper
+                                    </a>
+                                    {{ end }}
+                                    
+                                    {{ if .Params.url_code }}
+                                    <a href="{{ .Params.url_code }}" target="_blank" class="btn btn-outline-dark btn-sm" onclick="event.stopPropagation();">
+                                        <i class="fab fa-github me-1"></i>Code
+                                    </a>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+<style>
+.talk-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.talk-card {
+    transition: all 0.3s ease;
+}
+
+.venues-preview {
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 0.75rem;
+    border-left: 3px solid #007bff;
+}
+
+.venue-pill {
+    background-color: white;
+    border-radius: 20px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.85rem;
+    border: 1px solid #dee2e6;
+    white-space: nowrap;
+}
+
+.venue-pill.more-venues {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    font-weight: 500;
+}
+</style>
+{{ end }}

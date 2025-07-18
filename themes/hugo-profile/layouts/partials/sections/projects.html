@@ -1,0 +1,99 @@
+{{ if .Site.Params.projects.enable | default false }}
+<section id="projects" class="py-5">
+    <div class="container-fluid px-4">
+        <h3 class="text-center">{{ .Site.Params.projects.title | default "Projects" }}</h3>
+        <div class="row justify-content-center">
+            {{ range .Site.Params.projects.items }}
+            <div class="col-lg-6 col-12 my-4">
+                <div class="card research-interest-card" title="{{ .title }}" style="cursor: pointer;" onclick="window.location.href='{{ .featured.link }}'">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="card-img-container">
+                                <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">{{ .title }}</h5>
+                                <div class="card-text mb-3">
+                                    {{ .content }}
+                                </div>
+                                {{ with .badgeLinks }}
+                                <div class="badge-links mb-3">
+                                    {{ range . }}
+                                    <a href="{{ .url }}" class="badge-link me-2" onclick="event.stopPropagation();" target="_blank">{{ .name }}</a>
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                            </div>
+                            {{ if or (.links) (.featured) }}
+                            <div class="card-footer">
+                                {{ range .links }}
+                                <span class="m-1 mx-2">
+                                    <a href="{{ .url }}" target="_blank" onclick="event.stopPropagation();">
+                                        <i class="{{ .icon }}"></i>
+                                    </a>
+                                </span>
+                                {{ end }}
+                                {{ if .featured }}
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="{{ .featured.link }}" onclick="event.stopPropagation();">
+                                        {{ .featured.name }}
+                                    </a>
+                                </span>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ range ( where .Site.RegularPages "Type" "projects" ) }}
+            {{ if .Params.showInHome | default true }}
+            <div class="col-lg-6 col-12 my-4">
+                <div class="card research-interest-card" title="{{ .Title }}" style="cursor: pointer;" onclick="window.location.href='{{ .RelPermalink }}'">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="card-img-container">
+                                <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3">{{ .Title | truncate 50 }}</h5>
+                                <div class="card-text mb-3">
+                                    {{ .Summary | truncate 200 | safeHTML }}
+                                </div>
+                                {{ with .Params.badgeLinks }}
+                                <div class="badge-links mb-3">
+                                    {{ range . }}
+                                    <a href="{{ .url }}" class="badge-link me-2" onclick="event.stopPropagation();" target="_blank">{{ .name }}</a>
+                                    {{ end }}
+                                </div>
+                                {{ end }}
+                            </div>
+                            <div class="card-footer">
+                                {{ range .Params.links }}
+                                <span class="m-1 mx-2">
+                                    <a href="{{ .url }}" onclick="event.stopPropagation();">
+                                        <i class="{{ .icon }}"></i>
+                                    </a>
+                                </span>
+                                {{ end }}
+                                <span class="float-end">
+                                    <a class="btn btn-sm" href="{{ .RelPermalink }}" onclick="event.stopPropagation();">
+                                        Know more
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
