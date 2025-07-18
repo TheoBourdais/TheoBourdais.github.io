@@ -7,89 +7,31 @@
             {{ range .Site.Params.projects.items }}
             <div class="col-lg-6 my-4">
                 <div class="card research-interest-card h-100 d-flex flex-column" title="{{ .title }}" style="cursor: pointer;" onclick="window.location.href='{{ .featured.link }}'">
-                    <div class="row g-0 flex-grow-1">
-                        <div class="col-md-4">
-                            <div class="card-img-container">
-                                <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
-                            </div>
-                        </div>
-                        <div class="col-md-8 d-flex flex-column">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title mb-3">{{ .title }}</h5>
-                                <div class="card-text mb-3">
-                                    {{ .content }}
-                                </div>
-                                {{ with .badgeLinks }}
-                                <div class="badge-links mb-3">
-                                    {{ range . }}
-                                    <a href="{{ .url }}" class="badge-link me-2" onclick="event.stopPropagation();" target="_blank">{{ .name }}</a>
-                                    {{ end }}
-                                </div>
-                                {{ end }}
-                            </div>
-                            {{ if or (.links) (.featured) }}
-                            <div class="card-footer bg-transparent border-0 mt-auto px-3 py-2">
-                                {{ range .links }}
-                                <span class="m-1 mx-2">
-                                    <a href="{{ .url }}" target="_blank" onclick="event.stopPropagation();">
-                                        <i class="{{ .icon }}"></i>
-                                    </a>
-                                </span>
-                                {{ end }}
-                                {{ if .featured }}
-                                <span class="float-end">
-                                    <a class="btn btn-sm" href="{{ .featured.link }}" onclick="event.stopPropagation();">
-                                        {{ .featured.name }}
-                                    </a>
-                                </span>
-                                {{ end }}
-                            </div>
-                            {{ end }}
+                    <!-- Full-width image background with overlaid text -->
+                    <div class="card-img-overlay-container">
+                        <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title text-white mb-3">{{ .title }}</h5>
+                            <p class="card-text text-white">{{ .content }}</p>
                         </div>
                     </div>
+                    <!-- Footer disabled -->
                 </div>
             </div>
             {{ end }}
             {{ range ( where .Site.RegularPages "Type" "projects" ) }}
             {{ if .Params.showInHome | default true }}
-            <div class="col-lg-6 my-4">
-                <div class="card research-interest-card h-100 d-flex flex-column" title="{{ .Title }}" style="cursor: pointer;" onclick="window.location.href='{{ .RelPermalink }}'">
-                    <div class="row g-0 flex-grow-1">
-                        <div class="col-md-4">
-                            <div class="card-img-container">
-                                <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
-                            </div>
-                        </div>
-                        <div class="col-md-8 d-flex flex-column">
-                            <div class="card-body flex-grow-1">
-                                <h5 class="card-title mb-3">{{ .Title | truncate 50 }}</h5>
-                                <div class="card-text mb-3">
-                                    {{ .Summary | truncate 200 | safeHTML }}
-                                </div>
-                                {{ with .Params.badgeLinks }}
-                                <div class="badge-links mb-3">
-                                    {{ range . }}
-                                    <a href="{{ .url }}" class="badge-link me-2" onclick="event.stopPropagation();" target="_blank">{{ .name }}</a>
-                                    {{ end }}
-                                </div>
-                                {{ end }}
-                            </div>
-                            <div class="card-footer bg-transparent border-0 mt-auto px-3 py-2">
-                                {{ range .Params.links }}
-                                <span class="m-1 mx-2">
-                                    <a href="{{ .url }}" onclick="event.stopPropagation();">
-                                        <i class="{{ .icon }}"></i>
-                                    </a>
-                                </span>
-                                {{ end }}
-                                <span class="float-end">
-                                    <a class="btn btn-sm" href="{{ .RelPermalink }}" onclick="event.stopPropagation();">
-                                        Know more
-                                    </a>
-                                </span>
-                            </div>
+            <div class="col-lg-6 col-12 my-4">
+                <div class="card research-interest-card" title="{{ .Title }}" style="cursor: pointer;" onclick="window.location.href='{{ .RelPermalink }}'">
+                    <!-- Full-width image background with overlaid text -->
+                    <div class="card-img-overlay-container">
+                        <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title text-white mb-3">{{ .Title | truncate 50 }}</h5>
+                            <p class="card-text text-white">{{ .Summary | truncate 200 | safeHTML }}</p>
                         </div>
                     </div>
+                    <!-- Footer disabled -->
                 </div>
             </div>
             {{ end }}

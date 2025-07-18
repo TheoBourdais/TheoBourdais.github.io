@@ -87,6 +87,12 @@ params:
       - Model Aggregation techniques
       - Gaussian Process methods
       - Random Matrix Theory applications in machine learning
+
+      TODO:
+      - add research interests pages
+      - check style of website
+      - add new paper
+      - add blog post of new paper
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
@@ -154,11 +160,8 @@ params:
     title: "Research Interests"
     items:
       - title: "Algorithm Discovery"
-        content: "Developing computational frameworks to automatically discover algorithms and functional relationships from data. My work focuses on creating interpretable methods that can uncover the underlying structure of complex systems without requiring prior knowledge of the governing equations."
-        image: "/images/CHD/FPUT_subgraph.png"
-        featured:
-          name: "Explore Research"
-          link: "/research-areas/algorithm-discovery/"
+        #content: "Developing computational frameworks to automatically discover algorithms and functional relationships from data. My work focuses on creating interpretable methods that can uncover the underlying structure of complex systems without requiring prior knowledge of the governing equations."
+        image: "/images/binary_code.jpg"
         badgeLinks:
           - name: "Computational Hypergraph Discovery"
             url: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
@@ -166,20 +169,10 @@ params:
             url: "https://en.wikipedia.org/wiki/Gaussian_process"
           - name: "Machine Learning"
             url: "https://en.wikipedia.org/wiki/Machine_learning"
-        links:
-          - icon: fas fa-file-alt
-            url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
-          - icon: fab fa-github
-            url: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
-          - icon: fas fa-microphone
-            url: "/talks/chd-talk/"
 
       - title: "Digital Twins"
-        content: "Creating robust digital representations of physical systems by combining multiple models and data sources. My research addresses the challenge of model uncertainty and develops frameworks for aggregating diverse computational models to create more accurate and reliable digital twins."
-        image: "/images/uav-elements.jpeg"
-        featured:
-          name: "Learn More"
-          link: "/research-areas/digital-twins/"
+        #content: "Creating robust digital representations of physical systems by combining multiple models and data sources."
+        image: "/images/Spherical_Fourier_Neural-500x282.png"
         badgeLinks:
           - name: "Model Aggregation"
             url: "https://en.wikipedia.org/wiki/Ensemble_learning"
@@ -187,13 +180,6 @@ params:
             url: "https://en.wikipedia.org/wiki/Ensemble_learning"
           - name: "Uncertainty Quantification"
             url: "https://en.wikipedia.org/wiki/Uncertainty_quantification"
-        links:
-          - icon: fas fa-file-alt
-            url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
-          - icon: fas fa-file-alt
-            url: "/publications/pruning-deep-neural-networks-via-a-combination-of-the-marchenko-pastur-distribution-and-regularization/"
-          - icon: fas fa-microphone
-            url: "/talks/model-aggregation-talk/"
 
   # Achievements section
   achievements:
