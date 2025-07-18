@@ -56,6 +56,12 @@ params:
       - Computational Hypergraph Discovery
       - Model Aggregation techniques
       - Random Matrix Theory applications
+
+      TODO:
+      - add research interests pages
+      - check style of website
+      - add new paper
+      - add blog post of new paper
     image: "/images/profile.png"
     bottomImage:
       enable: true
@@ -88,11 +94,6 @@ params:
       - Gaussian Process methods
       - Random Matrix Theory applications in machine learning
 
-      TODO:
-      - add research interests pages
-      - check style of website
-      - add new paper
-      - add blog post of new paper
     skills:
       enable: true
       title: "Here are a few technologies I've been working with recently:"
