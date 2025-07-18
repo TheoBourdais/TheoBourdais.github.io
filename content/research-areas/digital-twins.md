@@ -2,153 +2,85 @@
 title: "Digital Twins"
 date: 2025-01-01
 draft: false
-description: "Creating robust digital representations of physical systems by combining multiple models and data sources"
----
+description: "Creating robust digital representations of physical systems."
+tags: ["Digital Twins", "Model Aggregation", "Uncertainty Quantification", "Aerospace", "Machine Learning"]
 
-# Digital Twins
+# Research metadata
+experience:
+  - title: "Research Associate"
+    organization: "NASA Jet Propulsion Laboratory (JPL)"
+    date: "2024-2025"
+    focus: "Digital twin methodologies for aerospace applications"
 
-My research in digital twins focuses on creating robust digital representations of physical systems by combining multiple models and data sources. The key challenge I address is **model uncertainty** - how to create reliable digital twins when we have multiple competing models and uncertain data.
+related_publications:
+  - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
+    venue: "ICLR 2025"
+    url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
+    github: "https://github.com/TheoBourdais/ModelAggregation"
+    type: "core"
+  - title: "Codiscovering graphical structure and functional relationships within data"
+    venue: "PNAS 2024"
+    url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
+    github: "https://github.com/TheoBourdais/ComputationalHypergraphDiscovery"
+    type: "supporting"
 
-## Research Overview
-
-Traditional digital twins rely on single models, but real-world systems are complex and no single model captures all aspects perfectly. My approach develops frameworks for **aggregating diverse computational models** to create more accurate and reliable digital twins.
-
-### The Model Uncertainty Problem
-- **Multiple models** may describe the same system differently
-- **Data uncertainty** affects model reliability
-- **Computational trade-offs** between accuracy and speed
-- **Real-time constraints** in operational environments
-
-### My Solution: Model Aggregation Framework
-- **Variance-minimizing aggregation** outperforms error-minimizing approaches
-- **Uncertainty quantification** through ensemble methods
-- **Robust combination** of physics-based and data-driven models
-- **Adaptive weighting** based on model performance
-
-## Key Research Contributions
-
-### Model Aggregation Theory
-My breakthrough finding: **Minimizing empirical variance often outperforms minimizing empirical error** when combining models.
-
-**Why this matters:**
-- Traditional approaches focus on minimizing training error
-- But generalization depends on prediction stability
-- Variance minimization leads to more robust ensemble predictions
-- Particularly effective under model uncertainty
-
-### Theoretical Framework
-- **Bias-variance decomposition** for ensemble methods
-- **Optimal weight computation** for variance minimization
-- **Uncertainty propagation** through model hierarchies
-- **Convergence guarantees** for aggregation algorithms
-
-## Applications
-
-### Aerospace Systems
-- **UAV digital twins** combining aerodynamic and sensor models
-- **Real-time flight control** with model uncertainty
-- **Predictive maintenance** using ensemble predictions
-- **Mission planning** under uncertain conditions
-
-### Engineering Systems
-- **Structural health monitoring** with multiple sensor models
-- **Process control** in manufacturing
-- **Energy systems** optimization
-- **Infrastructure monitoring** and maintenance
-
-### Scientific Computing
-- **Climate modeling** with ensemble methods
-- **Weather prediction** using multiple forecast models
-- **Computational fluid dynamics** with uncertainty quantification
-- **Multi-scale modeling** in materials science
-
-## Technical Innovations
-
-### Ensemble Methods for Digital Twins
-- **Multi-fidelity modeling**: Combining high and low-fidelity models
-- **Physics-informed ensembles**: Incorporating physical constraints
-- **Hierarchical aggregation**: Multi-level model combination
-- **Dynamic weighting**: Adapting to changing conditions
-
-### Uncertainty Quantification
-- **Aleatoric uncertainty**: Inherent system randomness
-- **Epistemic uncertainty**: Knowledge limitations
-- **Model uncertainty**: Structural model differences
-- **Predictive uncertainty**: Future state predictions
-
-### Computational Efficiency
-- **Parallel model evaluation**: Distributed computing strategies
-- **Surrogate modeling**: Fast approximations of expensive models
-- **Adaptive sampling**: Efficient data collection
-- **Online learning**: Real-time model updates
-
-## Research Impact
-
-### Theoretical Contributions
-- **Novel aggregation theory** for model combination
-- **Uncertainty quantification** in ensemble methods
-- **Robustness analysis** of digital twin systems
-- **Scalability results** for large model ensembles
-
-### Practical Applications
-- **Improved prediction accuracy** in real-world systems
-- **Robust decision-making** under uncertainty
-- **Efficient resource allocation** in model computation
-- **Enhanced system reliability** through redundancy
-
-## Current Research Directions
-
-### Methodological Advances
-- **Deep learning integration**: Neural network ensembles
-- **Federated learning**: Distributed model training
-- **Transfer learning**: Knowledge sharing across domains
-- **Causal modeling**: Understanding system mechanisms
-
-### Application Domains
-- **Autonomous systems**: Self-driving vehicles and drones
-- **Smart manufacturing**: Industry 4.0 applications
-- **Healthcare**: Patient monitoring and treatment
-- **Environmental systems**: Climate and ecosystem modeling
-
-## Publications and Resources
-
-### Key Publications
-- [Model aggregation: minimizing empirical variance outperforms minimizing empirical error](/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/) (ICLR 2025)
-- [Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization](/publications/pruning-deep-neural-networks-via-a-combination-of-the-marchenko-pastur-distribution-and-regularization/) (arXiv 2025)
-
-### Talks and Presentations
-- [DTE AICOMAS 2025 Conference Talk](/talks/model-aggregation-talk/) (Upcoming)
-- Various workshops on uncertainty quantification
-- Industry collaborations and applications
-
-## Future Directions
-
-### Theoretical Development
-- **Optimal aggregation theory**: Mathematical foundations
-- **Scalability analysis**: Large-scale system modeling
-- **Robustness guarantees**: Performance under adversarial conditions
-- **Interpretability methods**: Understanding ensemble decisions
-
-### Technology Integration
-- **Edge computing**: Real-time inference on embedded systems
-- **Cloud integration**: Scalable model deployment
-- **IoT connectivity**: Sensor network integration
-- **AI acceleration**: Hardware-optimized inference
-
-### Application Expansion
-- **Smart cities**: Urban system modeling
-- **Precision agriculture**: Crop and soil modeling
-- **Financial systems**: Risk assessment and trading
-- **Supply chain**: Logistics and optimization
-
-## Collaborations
-
-This research involves collaborations with:
-- **Industrial partners** for real-world validation
-- **Academic institutions** for theoretical development
-- **Government agencies** for critical applications
-- **International consortiums** for standards development
+related_talks:
+  model_aggregation:
+    - name: "UNCECOMP 2025"
+      date: "2025-06-11"
+      location: "Rhodes, Greece"
+      subject: "Model Aggregation"
+      talk_url: "/talks/model-aggregation/"
+    - name: "DTE AICOMAS"
+      date: "2025-02-17"
+      location: "Paris, France"
+      subject: "Model Aggregation"
+      talk_url: "/talks/model-aggregation/"
+    - name: "JPL Research Seminar"
+      date: "2025-01-17"
+      location: "Pasadena, CA"
+      subject: "Model Aggregation"
+      talk_url: "/talks/model-aggregation/"
+  chd:
+    - name: "DTE AICOMAS"
+      date: "2025-02-18"
+      location: "Paris, France"
+      subject: "Computational Hypergraph Discovery"
+      talk_url: "/talks/computational-hypergraph-discovery/"
+    - name: "SIAM MDS"
+      date: "2024-10-24"
+      location: "Atlanta, GA"
+      subject: "Computational Hypergraph Discovery"
+      talk_url: "/talks/computational-hypergraph-discovery/"
+    - name: "Digital Twins for Inverse Problems"
+      date: "2024-07-23"
+      location: "Marseille, France"
+      subject: "Computational Hypergraph Discovery"
+      talk_url: "/talks/computational-hypergraph-discovery/"
+    - name: "SIAM UQ 2024"
+      date: "2024-03-29"
+      location: "Trieste, Italy"
+      subject: "Computational Hypergraph Discovery"
+      talk_url: "/talks/computational-hypergraph-discovery/"
 
 ---
 
-*This research enables the creation of more reliable and robust digital twins that can handle the complexity and uncertainty inherent in real-world systems.*
+
+**Digital twins** are real-time digital replicas of physical systems that enable simulation, monitoring, and optimization. Unlike traditional models, they are **dynamic** (continuously updated), **bi-directional** (inform physical systems), and **predictive** (enable forecasting).
+
+![Digital Twins](/images/uav-elements.jpeg)
+
+## Technical challenges
+
+To create a true digital twin, we need to combine:
+- **Accurate modeling**
+- **Real-time data assimilation**
+- **Control of the physical system using the digital twin**
+
+Combining these three aspects for complex, large scale systems with potentially chaotic behavior is the core challenge of digital twin research. 
+
+---
+
+## My research in Digital Twins
+
+I use modern machine learning techniques to create better models of physical systems. With Computational Hypergraph Discovery (CHD), we can sort through large datasets with many variables to discover the underlying functional relationships and graphical structure. This allows us to build more accurate and interpretable models of complex systems. With model aggregation, we can combine multiple models to get better predictions. When designing the research, I specifically focused on aggregating models for large scale physical systems, such as Earth's climate. 
