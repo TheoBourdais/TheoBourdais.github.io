@@ -7,10 +7,28 @@ params:
   favicon: "/images/site-logo.png"
   name: "Theo Bourdais"
   title: "PhD Student @ Caltech"
-  description: "PhD Student in Applied and Computational Mathematics at Caltech"
+  description: "PhD Student in Computing and Mathematical Sciences at Caltech"
   author: "Theo Bourdais"
   email: "tbourdai@caltech.edu"
   location: "California Institute of Technology"
+
+  # Palette (Caltech-adjacent academic: navy / warm paper / restrained blue)
+  color:
+    textColor: "#1c2430"
+    secondaryTextColor: "#5a6574"
+    textLinkColor: "#2a5a8a"
+    backgroundColor: "#f5f3ef"
+    secondaryBackgroundColor: "#e4ebf3"
+    primaryColor: "#1a365d"
+    secondaryColor: "#ffffff"
+    darkmode:
+      textColor: "#e8eaed"
+      secondaryTextColor: "#a8b0bc"
+      textLinkColor: "#9ec0e0"
+      backgroundColor: "#141a22"
+      secondaryBackgroundColor: "#1e2733"
+      primaryColor: "#8eb4d8"
+      secondaryColor: "#1e2733"
   
   # Social links
   socialIcons:
@@ -38,7 +56,7 @@ params:
       disableAbout: true
       disableNews: false  # Enable News in built-in navbar
       disableExperience: false
-      disableEducation: false
+      disableEducation: true  # Combined into Experience nav link; section still on page
       disableProjects: false
       disableAchievements: false  # Enable built-in achievements (Publications) in navbar
       disableContact: true
@@ -48,7 +66,7 @@ params:
     enable: true
     intro: "Hi, my name is"
     title: "Theo Bourdais"
-    subtitle: "PhD Student in Applied and Computational Mathematics"
+    subtitle: "PhD Student in Computing and Mathematical Sciences"
     content: |-
       I am a PhD student at Caltech working with [Houman Owhadi](http://users.cms.caltech.edu/~owhadi/index.htm). I am also grateful to be supported by the [Kortschak Scholar program](https://www.cms.caltech.edu/research/kortschak-scholars).
 
@@ -63,12 +81,13 @@ params:
       enable: true
       name: "Resume"
       url: "/files/cv.pdf"
-      download: true
-      newPage: false
+      newPage: true
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-github
           url: https://github.com/TheoBourdais
+        - icon: fas fa-graduation-cap
+          url: https://scholar.google.com/citations?user=Vr_DMBoAAAAJ&hl=fr
         - icon: fab fa-linkedin
           url: https://www.linkedin.com/in/theobourdais/
         - icon: fas fa-envelope
@@ -109,7 +128,7 @@ params:
         companyUrl: "https://www.jpl.nasa.gov"
         date: "2024 - 2025"
         content: |-
-          Investigated applying my research to JPL's aerospace applications, in the context of Digital Twins.
+          One-year appointment applying research on digital twins and structure discovery to aerospace applications.
       
       - job: "Junior Data Engineer"
         company: "Doc.ai (ShareCare)"
@@ -131,30 +150,30 @@ params:
     enable: true
     title: "Education"
     items:
-      - title: "PhD in Applied and Computational Mathematics"
+      - title: "PhD in Computing and Mathematical Sciences"
         school:
           name: "California Institute of Technology"
           url: "https://www.caltech.edu"
         date: "2022 - Present"
         content: |-
-          Advisor: Prof. Houman Owhadi. Research focus: 
-          - Machine learning
-          - Gaussian processes
-          - Computational mathematics
+          Advisor: Prof. Houman Owhadi. Supported by the Kortschak Scholars program.
+          Research focus: machine learning for scientific discovery, Gaussian processes, and computational mathematics.
       
-      - title: "Master of Mathematics"
+      - title: "Master of Mathematics (Part III)"
         school:
           name: "University of Cambridge"
           url: "https://www.cam.ac.uk"
         date: "2020 - 2021"
-        content: "Advanced studies in mathematical theory and applications"
+        content: "Specialized in statistics. Graduated with distinction (highest grade)."
       
       - title: "Master of Science (Engineering)"
         school:
           name: "École Polytechnique"
           url: "https://www.polytechnique.edu"
         date: "2017 - 2021"
-        content: "Specialized in applied mathematics and computational methods"
+        content: |-
+          Specialized in applied mathematics and theoretical physics. Graduated top 10% of the cohort.
+          Ranked 1st nationwide (France) in the competitive entrance examinations for École Polytechnique.
 
   # Research Interests section (formerly Projects)
   projects:
@@ -209,23 +228,33 @@ params:
         url: "/publications/codiscovering-graphical-structure-and-functional-relationships-within-data-a-gaussian-process-framework-for-connecting-the-dots/"
         image: "/images/CHD/FPUT_subgraph.png"
       
-  # News section
+  # News section (draft — confirm wording before publish)
   news:
     enable: true
     title: "Latest News"
     items:
+      - date: "07/09/2026"
+        content: "Gave a talk on [Non-linear Sensitivity Analysis for Interpretable Structure Discovery](/talks/non-linear-sensitivity-analysis-for-interpretable-structure-discovery/) at [SIAM AN26](https://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=88631) (MS118)."
+      - date: "06/15/2026"
+        content: "New preprint: [Graphical conditional generative modeling for digital twin modeling](https://arxiv.org/abs/2606.16219)."
+      - date: "05/12/2026"
+        content: "New preprint: [ISOMORPH](https://arxiv.org/abs/2605.12768), a supply-chain digital twin for simulation and forecasting benchmarks."
+      - date: "11/25/2025"
+        content: "New preprint: [Operator Learning at Machine Precision](https://arxiv.org/abs/2511.19980) (CHONKNORIS)."
+      - date: "08/11/2025"
+        content: "Gave a talk on Model Aggregation at [Mathematical and Computational Foundations of Digital Twins](https://conferences.cirm-math.fr/3449.html) (CIRM, Marseille)."
+      - date: "07/11/2025"
+        content: "Posted [Discovering Algorithms with Computational Language Processing](https://arxiv.org/abs/2507.03190) on arXiv."
+      - date: "05/29/2025"
+        content: "Patent application on co-discovering graphical structure and functional relationships within data [published](https://patents.google.com/patent/US20250173388A1) (US20250173388A1)."
+      - date: "04/24/2025"
+        content: "Presented a poster on Model Aggregation at [ICLR 2025](/talks/model-aggregation/)."
       - date: "03/02/2025"
-        content: "Our paper on Pruning Deep Neural Networks via a Combination of the Marchenko-Pastur Distribution and Regularization was posted on [Arxiv](https://arxiv.org/abs/2503.01922)!"
-      - date: "02/17/2025"
-        content: "I will be giving a talk on Model aggregation at [DTE AICOMAS](https://dte_aicomas_2025.iacm.info/) in Paris."
+        content: "Posted [Pruning Deep Neural Networks via Marchenko–Pastur Distribution and Regularization](https://arxiv.org/abs/2503.01922) on arXiv."
       - date: "02/01/2025"
-        content: "Our paper on Model aggregation was accepted at ICLR 2025!"
-      - date: "09/27/2024"
-        content: "Our paper [Model aggregation: minimizing empirical variance outperforms minimizing empirical error](/publications/modelaggregation/) was posted on Arxiv!"
+        content: "Our paper on Model Aggregation was accepted at ICLR 2025!"
       - date: "08/01/2024"
-        content: "Our paper [Codiscovering graphical structure and functional relationships within data: A Gaussian Process framework for connecting the dots](https://www.pnas.org/doi/10.1073/pnas.2403449121) was published in PNAS!"
-      - date: "02/27/2024"
-        content: "I will be giving a talk on Computational Hypergraph Discovery at the [SIAM UQ 2024](https://www.siam.org/conferences/cm/conference/uq24) conference in Trieste."
+        content: "Our paper [Codiscovering graphical structure and functional relationships within data](https://www.pnas.org/doi/10.1073/pnas.2403449121) was published in PNAS!"
 
   # Contact section
   contact:
@@ -277,11 +306,16 @@ menu:
       title: Talks
       url: /talks
       weight: 2
+    - identifier: miscellaneous
+      name: Misc
+      title: Miscellaneous
+      url: /miscellaneous
+      weight: 3
     - identifier: posts
       name: Blog
       title: Blog posts
       url: /posts
-      weight: 3
+      weight: 4
 
 # Page settings
 pagination:

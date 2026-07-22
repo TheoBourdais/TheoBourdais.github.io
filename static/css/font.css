@@ -1,0 +1,13 @@
+/* Site font override — expressive display + readable body (avoids Inter/Roboto) */
+body {
+  font-family: "Source Sans 3", "Alata", system-ui, sans-serif !important;
+}
+
+.secondary-font,
+#secondary-font,
+.primary-font,
+#primary-font,
+.default-font,
+#default-font {
+  font-family: "Source Serif 4", "Lora", Georgia, serif !important;
+}

@@ -1,0 +1,575 @@
+/* ============================================================
+   Site design refresh — Caltech-adjacent academic palette
+   Deep navy / warm off-white / restrained blue accent
+   ============================================================ */
+
+:root {
+  --tb-navy: #1a365d;
+  --tb-navy-deep: #12263f;
+  --tb-ink: #1c2430;
+  --tb-muted: #5a6574;
+  --tb-paper: #f5f3ef;
+  --tb-paper-warm: #ebe7e0;
+  --tb-surface: #ffffff;
+  --tb-accent: #2a5a8a;
+  --tb-accent-soft: rgba(42, 90, 138, 0.12);
+  --tb-line: rgba(26, 54, 93, 0.12);
+  --tb-shadow: 0 8px 28px rgba(18, 38, 63, 0.08);
+  --tb-radius: 0.75rem;
+  --tb-font-display: "Source Serif 4", "Lora", Georgia, serif;
+  --tb-font-body: "Source Sans 3", "Alata", system-ui, sans-serif;
+  --tb-section-a: #f5f3ef;
+  --tb-section-b: #ebe6de;
+}
+
+/* Re-map theme tokens so Bootstrap/theme hooks pick up the palette */
+html,
+body.light {
+  --text-color: var(--tb-ink) !important;
+  --text-secondary-color: var(--tb-muted) !important;
+  --text-link-color: var(--tb-accent) !important;
+  --background-color: var(--tb-paper) !important;
+  --secondary-background-color: var(--tb-accent-soft) !important;
+  --primary-color: var(--tb-navy) !important;
+  --secondary-color: var(--tb-surface) !important;
+}
+
+body.dark {
+  --tb-paper: #141a22;
+  --tb-paper-warm: #1a222d;
+  --tb-surface: #1e2733;
+  --tb-ink: #e8eaed;
+  --tb-muted: #a8b0bc;
+  --tb-navy: #8eb4d8;
+  --tb-navy-deep: #e8eaed;
+  --tb-accent: #9ec0e0;
+  --tb-line: rgba(158, 192, 224, 0.18);
+  --tb-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  --tb-accent-soft: rgba(158, 192, 224, 0.1);
+  --tb-section-a: #141a22;
+  --tb-section-b: #1a222d;
+
+  /* Remap on body so descendants don't keep html's light-mode token snapshot */
+  --text-color: var(--tb-ink) !important;
+  --text-secondary-color: var(--tb-muted) !important;
+  --text-link-color: var(--tb-accent) !important;
+  --background-color: var(--tb-paper) !important;
+  --secondary-background-color: var(--tb-accent-soft) !important;
+  --primary-color: var(--tb-navy) !important;
+  --secondary-color: var(--tb-surface) !important;
+}
+
+/* ---------- Typography ---------- */
+body {
+  font-family: var(--tb-font-body) !important;
+  color: var(--tb-ink);
+  letter-spacing: 0.01em;
+  background-color: var(--tb-section-a) !important;
+  /* Soft atmospheric wash — not flat gray */
+  background-image: none !important;
+  background-attachment: scroll;
+  /* Sticky footer: keep footer at bottom on short pages (e.g. Misc) */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#content {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--tb-font-display) !important;
+  letter-spacing: -0.02em;
+  color: var(--tb-navy-deep);
+}
+
+/* Font utilities: family only — never force a light-mode ink color on whole blocks */
+.primary-font, #primary-font,
+.secondary-font, #secondary-font,
+.default-font, #default-font {
+  font-family: var(--tb-font-display) !important;
+  letter-spacing: -0.02em;
+}
+
+#hero .hero-content,
+#hero .hero-copy,
+#hero .hero-copy p {
+  color: var(--tb-ink) !important;
+  opacity: 1 !important;
+}
+
+#hero .hero-content a {
+  color: var(--tb-accent) !important;
+}
+
+#hero .hero-content a:hover {
+  color: var(--tb-navy) !important;
+}
+
+a {
+  color: var(--tb-accent);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+a:hover {
+  color: var(--tb-navy);
+}
+
+/* ---------- Header / nav ---------- */
+header .navbar {
+  background-color: color-mix(in srgb, var(--tb-section-a) 88%, transparent) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--tb-line);
+}
+
+body.dark header .navbar {
+  background-color: color-mix(in srgb, var(--tb-section-a) 90%, transparent) !important;
+}
+
+.navbar .nav-link {
+  font-family: var(--tb-font-body) !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Hero ---------- */
+#hero {
+  position: relative;
+  /* Don't force full viewport — that left a large empty gap before News */
+  min-height: 0 !important;
+  padding-top: 1.75rem !important;
+  padding-bottom: 12rem !important;
+}
+
+#hero .hero-row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  justify-content: space-between;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+#hero .hero-copy {
+  flex: 1 1 50%;
+  min-width: 0;
+  order: 1;
+}
+
+#hero .hero-photo {
+  flex: 1 1 50%;
+  order: 2;
+  width: 50% !important;
+  max-width: 50% !important;
+  padding-top: 0 !important;
+  margin-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero h1 {
+  font-family: var(--tb-font-display) !important;
+  color: var(--tb-navy) !important;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+#hero .subtitle {
+  color: var(--tb-accent) !important;
+  font-family: var(--tb-font-body) !important;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  opacity: 1 !important;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem) !important;
+}
+
+/* Role line under the name — keep clearly secondary to the brand */
+#hero h2 {
+  color: var(--tb-muted) !important;
+  opacity: 1 !important;
+  font-family: var(--tb-font-body) !important;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  font-size: clamp(0.8rem, 1.35vw, 1rem) !important;
+  line-height: 1.35 !important;
+  margin-top: 0.15rem !important;
+  margin-bottom: 0.35rem !important;
+}
+
+#hero .image {
+  width: min(100%, 28rem) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+#hero .image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  border-color: var(--tb-navy) !important;
+  border-width: 2px !important;
+  box-shadow: var(--tb-shadow) !important;
+  transition: transform 0.35s ease, box-shadow 0.35s ease !important;
+}
+
+#hero .image img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(18, 38, 63, 0.14) !important;
+  filter: none !important;
+}
+
+#hero a.btn {
+  border-radius: var(--tb-radius) !important;
+  border-color: var(--tb-navy) !important;
+  font-family: var(--tb-font-body) !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease !important;
+}
+
+#hero a.btn:hover {
+  background-color: var(--tb-navy) !important;
+  color: #fff !important;
+  transform: translateY(-1px);
+}
+
+#hero a.btn.social-icon {
+  border-color: var(--tb-line) !important;
+  color: var(--tb-navy) !important;
+  transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s ease !important;
+}
+
+#hero a.btn.social-icon:hover {
+  border-color: var(--tb-navy) !important;
+  background-color: var(--tb-accent-soft) !important;
+  opacity: 1 !important;
+  transform: translateY(-2px);
+}
+
+/* ---------- Sections: spacing + titles ---------- */
+#news,
+#experience,
+#education,
+#projects,
+#achievements,
+#contact {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+#news {
+  padding-top: 11rem !important;
+}
+
+#news h3,
+#experience h3,
+#education h3,
+#projects h3,
+#achievements h3,
+#contact h3,
+#publications-list h2,
+#talks-list h2,
+#posts-list h2 {
+  font-family: var(--tb-font-display) !important;
+  color: var(--tb-navy) !important;
+  margin-bottom: 2.25rem !important;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+#news h3::after,
+#experience h3::after,
+#education h3::after,
+#projects h3::after,
+#achievements h3::after,
+#contact h3::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin: 0.75rem auto 0;
+  background: var(--tb-accent);
+  opacity: 0.7;
+  border-radius: 1px;
+}
+
+/* Alternating sections — exactly two tones (A / B), solid fills
+   Order: Header+Hero(A) → News(B) → Experience(A) → Education(B)
+   → Research Interests(A) → Selected publications(B) */
+
+/* A: Hero, Experience, Research Interests */
+#hero,
+#experience,
+#projects,
+#contact {
+  background: var(--tb-section-a) !important;
+}
+
+/* B: News, Education, Selected publications */
+#news,
+#education,
+#achievements {
+  background: var(--tb-section-b) !important;
+  border-top: 1px solid var(--tb-line);
+  border-bottom: 1px solid var(--tb-line);
+}
+
+/* ---------- Cards ---------- */
+#achievements .card,
+.publication-card,
+.talk-card,
+.post-card,
+#posts-list .card,
+#projects .card {
+  background-color: var(--tb-surface) !important;
+  border: 1px solid var(--tb-line) !important;
+  border-radius: var(--tb-radius) !important;
+  box-shadow: var(--tb-shadow);
+  color: var(--tb-ink) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+#achievements .card:hover,
+.publication-card:hover,
+.talk-card:hover,
+.post-card:hover,
+#posts-list .card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 32px rgba(18, 38, 63, 0.12) !important;
+  border-color: rgba(26, 54, 93, 0.28) !important;
+}
+
+.post-card .card-body,
+#posts-list .card .card-body {
+  background-color: transparent !important;
+  color: var(--tb-ink) !important;
+}
+
+.post-card .card-title a,
+#posts-list .card-title a {
+  color: var(--tb-navy) !important;
+}
+
+#projects .card,
+#projects .research-interest-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease !important;
+  transform: none;
+}
+
+#projects .card:hover,
+#projects .research-interest-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: var(--tb-navy) !important;
+  box-shadow: 0 14px 36px rgba(18, 38, 63, 0.14) !important;
+}
+
+#projects .research-interest-card {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: block;
+}
+
+#projects .card-img-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(18, 38, 63, 0.82) 0%,
+    rgba(18, 38, 63, 0.35) 55%,
+    rgba(18, 38, 63, 0.15) 100%
+  ) !important;
+}
+
+#achievements .btn-outline-primary,
+.publication-card .btn-outline-primary,
+.talk-card .btn-outline-primary {
+  color: var(--tb-navy) !important;
+  border-color: var(--tb-navy) !important;
+}
+
+#achievements .btn-outline-primary:hover,
+.publication-card .btn-outline-primary:hover,
+.talk-card .btn-outline-primary:hover {
+  background-color: var(--tb-navy) !important;
+  color: #fff !important;
+}
+
+.badge.bg-secondary {
+  background-color: var(--tb-accent-soft) !important;
+  color: var(--tb-navy) !important;
+  font-weight: 500;
+}
+
+/* Talks venue pills — replace default Bootstrap blue */
+.venues-preview {
+  background-color: var(--tb-accent-soft) !important;
+  border-left: 3px solid var(--tb-navy) !important;
+  border-radius: 6px;
+}
+
+.venue-pill.more-venues {
+  background-color: var(--tb-navy) !important;
+  border-color: var(--tb-navy) !important;
+  color: #fff !important;
+}
+
+/* ---------- Timeline (experience / education) ---------- */
+#experience .vertical-timeline::before,
+#education .vertical-timeline::before {
+  background: var(--tb-line) !important;
+}
+
+#experience .vertical-timeline-element-icon,
+#education .vertical-timeline-element-icon {
+  box-shadow: 0 0 0 3px var(--tb-accent-soft) !important;
+}
+
+/* ---------- Footer social ---------- */
+footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0 0.35rem;
+  border-radius: 50%;
+  border: 1px solid var(--tb-line);
+  color: var(--tb-navy) !important;
+  background: var(--tb-surface);
+  transition: transform 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+}
+
+footer .footer-social a:hover {
+  transform: translateY(-2px);
+  background: var(--tb-accent-soft);
+  border-color: var(--tb-navy);
+}
+
+footer .footer-social svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: currentColor;
+}
+
+/* ---------- Scroll reveal (subtle) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .tb-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .tb-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tb-reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  #hero .image img,
+  #hero a.btn,
+  #achievements .card,
+  .publication-card,
+  .talk-card,
+  .post-card,
+  #projects .card {
+    transition: none !important;
+  }
+}
+
+/* ---------- Narrow: photo above text when side-by-side would squash copy ---------- */
+@media (max-width: 991.98px) {
+  #hero .hero-row {
+    flex-wrap: wrap !important;
+    flex-direction: column;
+    align-items: center !important;
+  }
+
+  #hero .hero-photo {
+    order: 1;
+    flex: 0 0 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 0.75rem;
+  }
+
+  #hero .hero-copy {
+    order: 2;
+    flex: 1 1 auto;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  #hero .image {
+    width: min(72vw, 20rem) !important;
+    max-width: 20rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767.98px) {
+  #hero .image {
+    width: min(62vw, 16rem) !important;
+    max-width: 16rem !important;
+  }
+
+  #hero h1 {
+    font-size: clamp(1.75rem, 7vw, 2.4rem) !important;
+  }
+
+  #hero h2 {
+    font-size: 0.78rem !important;
+  }
+
+  #news,
+  #experience,
+  #education,
+  #projects,
+  #achievements,
+  #contact {
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
+  }
+
+  #projects .col-lg-6 {
+    width: 100% !important;
+  }
+
+  body {
+    background-attachment: scroll;
+  }
+}
+
+/* ---------- Blog / single dark-mode hardcode overrides ---------- */
+body.dark #posts-list .card,
+body.dark .post-card,
+body.dark #list-page .card {
+  background-color: var(--tb-surface) !important;
+  color: var(--tb-ink) !important;
+}
+
+body.dark #single .toc,
+body.dark #single .sticky-sidebar aside,
+body.dark #single .page-content blockquote code {
+  background: var(--tb-surface) !important;
+  color: var(--tb-ink) !important;
+  border-color: var(--tb-line) !important;
+}
+
+body.dark #single .page-content blockquote {
+  background: var(--tb-surface) !important;
+  color: var(--tb-ink) !important;
+}

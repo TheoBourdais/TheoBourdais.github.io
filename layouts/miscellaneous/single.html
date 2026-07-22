@@ -1,0 +1,39 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.short_text | default .Summary }}">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/single.css">
+<link rel="stylesheet" href="{{.Site.Params.staticPath}}/css/custom.css">
+<script defer src="{{.Site.Params.staticPath}}/fontawesome-6/all-6.4.2.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="single">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <h1 class="mb-3">{{ .Title }}</h1>
+        {{ if .Params.authors }}
+        <p class="text-muted">{{ delimit .Params.authors ", " " and " }}</p>
+        {{ end }}
+        {{ if .Params.publication }}
+        <p><strong>{{ .Params.publication }}</strong>{{ if .Params.status }} — {{ .Params.status }}{{ end }}</p>
+        {{ end }}
+        <article class="page-content">
+          {{ .Content | emojify }}
+        </article>
+        <div class="mt-4 d-flex flex-wrap gap-2">
+          {{ if .Params.url_pdf }}
+          <a href="{{ .Params.url_pdf }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">Open record</a>
+          {{ end }}
+          {{ range .Params.links }}
+          <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">{{ .name }}</a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

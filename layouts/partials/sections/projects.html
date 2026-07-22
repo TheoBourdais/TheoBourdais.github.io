@@ -1,29 +1,31 @@
-<!-- DEBUGGING: Force render projects section -->
+{{ if .Site.Params.projects.enable | default false }}
 <section id="projects" class="py-5">
     <div class="container">
         <h3 class="text-center">{{ .Site.Params.projects.title | default "Projects" }}</h3>
-        <!-- DEBUG: Enable value: {{ .Site.Params.projects.enable }} -->
         <div class="row justify-content-center">
             {{ range .Site.Params.projects.items }}
             <div class="col-lg-6 my-4">
-                <div class="card research-interest-card h-100 d-flex flex-column" title="{{ .title }}" style="cursor: pointer;" onclick="window.location.href='{{ .featured.link }}'">
-                    <!-- Full-width image background with overlaid text -->
+                <a class="card research-interest-card h-100 d-flex flex-column text-decoration-none"
+                   href="{{ .featured.link }}"
+                   title="{{ .title }}">
                     <div class="card-img-overlay-container">
                         <img class="card-img-top" src="{{ .image }}" alt="{{ .title }}">
                         <div class="card-img-overlay">
                             <h5 class="card-title text-white mb-3">{{ .title }}</h5>
-                            <p class="card-text text-white">{{ .content }}</p>
+                            {{ with .content }}
+                            <p class="card-text text-white">{{ . }}</p>
+                            {{ end }}
                         </div>
                     </div>
-                    <!-- Footer disabled -->
-                </div>
+                </a>
             </div>
             {{ end }}
             {{ range ( where .Site.RegularPages "Type" "projects" ) }}
             {{ if .Params.showInHome | default true }}
             <div class="col-lg-6 col-12 my-4">
-                <div class="card research-interest-card" title="{{ .Title }}" style="cursor: pointer;" onclick="window.location.href='{{ .RelPermalink }}'">
-                    <!-- Full-width image background with overlaid text -->
+                <a class="card research-interest-card text-decoration-none"
+                   href="{{ .RelPermalink }}"
+                   title="{{ .Title }}">
                     <div class="card-img-overlay-container">
                         <img class="card-img-top" src="{{ .Params.image }}" alt="{{ .Title }}">
                         <div class="card-img-overlay">
@@ -31,11 +33,11 @@
                             <p class="card-text text-white">{{ .Summary | truncate 200 | safeHTML }}</p>
                         </div>
                     </div>
-                    <!-- Footer disabled -->
-                </div>
+                </a>
             </div>
             {{ end }}
             {{ end }}
         </div>
     </div>
 </section>
+{{ end }}

@@ -1,0 +1,15 @@
+{{- $u := .Destination -}}
+{{- $isFile := or
+  (strings.HasSuffix $u ".pdf")
+  (strings.HasSuffix $u ".PDF")
+  (strings.Contains $u "/files/")
+  (strings.HasSuffix $u ".jpeg")
+  (strings.HasSuffix $u ".jpg")
+  (strings.HasSuffix $u ".png")
+  (strings.HasSuffix $u ".webp")
+-}}
+<a href="{{ $u | safeURL }}"
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+  {{- if or $isFile (strings.HasPrefix $u "http") }} target="_blank" rel="noopener noreferrer"{{ end -}}
+>{{ .Text | safeHTML }}</a>
+{{- /* Do not force download — open PDFs/media in the browser reader */ -}}

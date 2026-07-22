@@ -13,6 +13,16 @@ experience:
     focus: "Digital twin methodologies for aerospace applications"
 
 related_publications:
+  - title: "Graphical conditional generative modeling for digital twin modeling"
+    venue: "arXiv 2026"
+    url: "/publications/graphical-conditional-generative-modeling-for-digital-twin-modeling/"
+    github: "https://github.com/ZongrenZou/GraphicalConditionalGenerativeModeling"
+    type: "core"
+  - title: "ISOMORPH: A Supply Chain Digital Twin for Simulation, Dataset Generation, and Forecasting Benchmarks"
+    venue: "arXiv 2026"
+    url: "/publications/isomorph-a-supply-chain-digital-twin-for-simulation-dataset-generation-and-forecasting-benchmarks/"
+    github: "https://github.com/tuhinsahai/ISOMORPH"
+    type: "core"
   - title: "Model aggregation: minimizing empirical variance outperforms minimizing empirical error"
     venue: "ICLR 2025"
     url: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
@@ -26,9 +36,19 @@ related_publications:
 
 related_talks:
   model_aggregation:
+    - name: "CIRM Digital Twins Workshop"
+      date: "2025-08-11"
+      location: "Marseille, France"
+      subject: "Model Aggregation"
+      talk_url: "/talks/model-aggregation/"
     - name: "UNCECOMP 2025"
       date: "2025-06-11"
       location: "Rhodes, Greece"
+      subject: "Model Aggregation"
+      talk_url: "/talks/model-aggregation/"
+    - name: "ICLR 2025 (poster)"
+      date: "2025-04-24"
+      location: "Singapore"
       subject: "Model Aggregation"
       talk_url: "/talks/model-aggregation/"
     - name: "DTE AICOMAS"
@@ -41,6 +61,12 @@ related_talks:
       location: "Pasadena, CA"
       subject: "Model Aggregation"
       talk_url: "/talks/model-aggregation/"
+  structure_discovery:
+    - name: "SIAM AN26"
+      date: "2026-07-09"
+      location: "AN26 / MS118"
+      subject: "Non-linear Sensitivity Analysis"
+      talk_url: "/talks/non-linear-sensitivity-analysis-for-interpretable-structure-discovery/"
   chd:
     - name: "DTE AICOMAS"
       date: "2025-02-18"
@@ -52,7 +78,7 @@ related_talks:
       location: "Atlanta, GA"
       subject: "Computational Hypergraph Discovery"
       talk_url: "/talks/computational-hypergraph-discovery/"
-    - name: "Digital Twins for Inverse Problems"
+    - name: "Digital Twins for Inverse Problems (CIRM)"
       date: "2024-07-23"
       location: "Marseille, France"
       subject: "Computational Hypergraph Discovery"

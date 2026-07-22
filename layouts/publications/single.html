@@ -86,24 +86,24 @@
                 <strong>Links:</strong><br>
                 <div class="d-grid gap-2 mt-2">
                   {{ if .Params.url_pdf }}
-                  <a href="{{ .Params.url_pdf }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                  <a href="{{ .Params.url_pdf }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
                     <i class="fas fa-file-pdf me-2"></i>Full Paper
                   </a>
                   {{ else if .Params.url_preprint }}
-                  <a href="{{ .Params.url_preprint }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                  <a href="{{ .Params.url_preprint }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
                     <i class="fas fa-file-pdf me-2"></i>Paper
                   </a>
                   {{ else }}
                   {{ range first 1 .Params.links }}
-                  <a href="{{ .url }}" target="_blank" class="btn btn-outline-primary btn-sm">
+                  <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">
                     <i class="fas fa-link me-2"></i>{{ .name }}
                   </a>
                   {{ end }}
                   {{ end }}
                   
                   {{ if and .Params.url_pdf .Params.url_preprint }}
-                  <a href="{{ .Params.url_preprint }}" target="_blank" class="btn btn-outline-secondary btn-sm">
-                    <i class="fas fa-download me-2"></i>Download PDF
+                  <a href="{{ .Params.url_preprint }}" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">
+                    <i class="fas fa-file-pdf me-2"></i>View PDF
                   </a>
                   {{ end }}
                   

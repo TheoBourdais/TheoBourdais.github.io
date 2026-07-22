@@ -10,13 +10,23 @@ authors: ["Theo Bourdais"]
 # Links
 url_paper: "/publications/model-aggregation-minimizing-empirical-variance-outperforms-minimizing-empirical-error/"
 url_slides: "/files/presentation_model_aggregation.pdf"
+url_poster: "/images/posters/iclr2025-model-aggregation.jpeg"
 
 # Presentation venues (sorted by most recent first)
 venues:
+  - name: "Mathematical and Computational Foundations of Digital Twins (CIRM)"
+    date: "2025-08-11"
+    location: "Marseille, France"
+    url: "https://conferences.cirm-math.fr/3449.html"
   - name: "UNCECOMP 2025"
     date: "2025-06-11"
     location: "Rhodes, Greece"
     url: "https://2025.uncecomp.org/"
+  - name: "ICLR 2025 (poster)"
+    date: "2025-04-24"
+    location: "Singapore"
+    url: "https://iclr.cc/Conferences/2025"
+    slides: "/images/posters/iclr2025-model-aggregation.jpeg"
   - name: "DTE AICOMAS"
     date: "2025-02-17"
     location: "Paris, France"
@@ -30,3 +40,7 @@ venues:
 My talk on Model Aggregation! This framework introduces Minimal Empirical Variance Aggregation (MEVA), a data-driven approach that integrates predictions from various models to enhance overall accuracy.
 
 The method treats contributing models as black boxes and accommodates outputs from diverse methodologies, focusing on variance minimization for more robust estimation compared to traditional error minimization approaches.
+
+**ICLR 2025 poster:**
+
+![ICLR 2025 Model Aggregation poster](/images/posters/iclr2025-model-aggregation.jpeg)
