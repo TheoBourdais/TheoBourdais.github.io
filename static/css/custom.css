@@ -141,10 +141,8 @@ body.dark header .navbar {
 /* ---------- Hero ---------- */
 #hero {
   position: relative;
-  /* Don't force full viewport — that left a large empty gap before News */
-  min-height: 0 !important;
   padding-top: 1.75rem !important;
-  padding-bottom: 12rem !important;
+  padding-bottom: 10rem !important;
 }
 
 #hero .hero-row {
@@ -263,10 +261,6 @@ body.dark header .navbar {
 #contact {
   padding-top: 3rem !important;
   padding-bottom: 3rem !important;
-}
-
-#news {
-  padding-top: 11rem !important;
 }
 
 #news h3,
