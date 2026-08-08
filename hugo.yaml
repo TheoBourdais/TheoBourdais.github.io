@@ -237,6 +237,8 @@ params:
         content: "Gave a talk on [Non-linear Sensitivity Analysis for Interpretable Structure Discovery](/talks/non-linear-sensitivity-analysis-for-interpretable-structure-discovery/) at [SIAM AN26](https://meetings.siam.org/sess/dsp_programsess.cfm?SESSIONCODE=88631) (MS118)."
       - date: "06/15/2026"
         content: "New preprint: [Graphical conditional generative modeling for digital twin modeling](https://arxiv.org/abs/2606.16219)."
+      - date: "06/01/2026"
+        content: "Coded the website for [Sangle Paris](https://sangle-paris.com)."
       - date: "05/12/2026"
         content: "New preprint: [ISOMORPH](https://arxiv.org/abs/2605.12768), a supply-chain digital twin for simulation and forecasting benchmarks."
       - date: "11/25/2025"
